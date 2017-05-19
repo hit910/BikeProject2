@@ -10,7 +10,7 @@
 <script type="text/javascript">
 	function loginsend(){
 		send.submit();
-	}
+	}      
 </script>
 </head>
 <body>
