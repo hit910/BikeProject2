@@ -1,0 +1,110 @@
+@CHARSET "EUC-KR";
+
+#body {
+	padding: 0px;
+	margin: 0px;
+}
+
+#header_div {
+	width: 100%;
+	height: 135px;
+	background-color: black;
+}
+
+#header_logo {
+	margin-top: 10px;
+}
+
+#header_div2 {
+	width: 100%;
+	background-color: #00ABDF;
+	margin: 0 auto;
+}
+
+.menu {
+	float:right; 
+	text-align:center;
+	margin-top: 3px;
+}
+
+.menu li {
+	list-style: none;
+	display:inline-block;
+	font-family: °íµñ;
+	font-size:16px;
+/* 	text-align:center;  */
+	margin-right: 20px;
+	margin-bottom: 5px;
+	float: left;
+}
+
+.menu a{
+	text-decoration: none;
+	padding:14px 16px;
+	color: white;
+	font-weight: bold;
+	font-family: ¸¼Àº °íµñ;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+}
+
+.menu a:HOVER{
+	color: black;
+}
+
+.dropdown{
+		background: white;
+		color: #00ABDF;
+		position: absolute;
+		min-width: 160px;
+		/* box-shadow: 0 8px 15px #CCC; */
+		display: none;
+		float: left;
+		opacity: .8;
+	}
+
+#loginBtn{
+	width:70px;
+	height: 70px;
+	display: inline-block;
+}
+#estimate .dropdown a{
+		display: block;
+		color: white;
+	}
+	
+#estimate .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+	
+#estimate .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+
+#estimate:HOVER .dropdown {
+		display: block;
+	}
+
+#home_div {
+	width: 100%;
+	height: 100%;
+	background-color: #c3c3c3;
+}
+
+#home_img {
+	margin-top: 75px;
+	width: 100%;
+}
+
+#bottom_div {
+	width: 100%;
+}

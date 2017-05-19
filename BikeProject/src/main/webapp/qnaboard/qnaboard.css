@@ -1,0 +1,65 @@
+@CHARSET "EUC-KR";
+
+#qnaboard_div {
+	width: 100%;
+	height: 790px;
+	background-color: #c3c3c3;
+}
+
+#qnaboard_title {
+	width: 300px;
+	height: 50px;
+	margin-bottom: 20px;
+	color: white;
+	font-family: °íµñ;
+	font-size: 35px;
+	background-color: gray;
+	
+}
+
+#qna_table_header {
+	width: 1200px;
+	height: 30px;
+	font-family: ¸¼Àº °íµñ;
+	font-weight: bold;
+	text-align: center;
+	border-top: 2px;
+	border-bottom: 2px;
+	border-color: black;
+	border-style: solid;
+}
+
+#qna_table_content {
+	width: 1200px;
+	height: 550px;
+	border-top: 2px;
+	border-bottom: 2px;
+	border-color: black;
+	border-style: solid;
+	background-color: white;
+}
+
+#qna_table_bottom {
+	width: 1200px;
+	height: 40px;
+	border-top: 2px;
+	border-bottom: 2px;
+	border-color: black;
+	border-style: solid;
+}
+
+.table_header_no {
+	width: 15%
+}
+
+.table_header_title {
+	width: 55%
+}
+
+.table_header_name {
+	width: 20%
+}
+
+.table_header_date {
+	width: 10%
+}

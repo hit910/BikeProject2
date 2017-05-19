@@ -1,0 +1,53 @@
+	#loginContainer {
+		margin-top: 15px;
+		width: 267px;
+		height: 100px;
+		background-color: black;
+	}
+	
+	#loginBtn{
+		background-color: #00ABDF;
+		border: none;
+		color: white;
+		padding: 25px 20px;
+		margin-left: 0px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	
+	#loginBtn:HOVER {
+		background-color: white;
+		color: #00ABDF;
+		font-weight: bold;
+		border: 2px solid #00ABDF;
+}
+
+	#idBox{
+		width: 170px;
+		height: 30px;
+		float: left;
+	}
+	
+	#pwdBox{
+		width: 170px;
+		height: 30px;
+		float: left;
+	}
+	
+	#join{
+		text-decoration: none;
+		color: white;
+		margin-top: 5px;
+		margin-right: 10px;
+		float: right;
+	}
+	
+	#join:HOVER {
+		text-decoration: underline;
+}
