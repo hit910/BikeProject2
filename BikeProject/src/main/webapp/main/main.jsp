@@ -58,6 +58,10 @@
 		});
 	});
 	
+	function logoutsend(){
+		logout.submit();
+	}
+	
 </script>
 </head>
 <body body id="page-top" class="index">
@@ -78,7 +82,12 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="menu nav navbar-nav navbar-right">
 				<!-- <li class="page-scroll"><a href="#homeLink">홈</a></li> -->
+				<c:if test="${isUser == 0 }"><!-- 구매자 화면 -->
 				<li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
+				</c:if>
+				<c:if test="${isUser == 1 }"><!-- 판매자 화면 -->
+				<li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
+				</c:if>
 				<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
 					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 					
@@ -100,7 +109,9 @@
 						<div class="dropdown">
 							<a href="#estimateLink">주문 정보 확인</a>
 							<a href="#">회원 정보 수정</a>
-							<a href="logout">로그아웃</a>
+							<form name="logout" action="member/logout.do" method="post">
+								<a href="#" onclick="javascript:logoutsend();">로그아웃</a>
+							</form>
 						</div>
 					</li>
 					</c:if>

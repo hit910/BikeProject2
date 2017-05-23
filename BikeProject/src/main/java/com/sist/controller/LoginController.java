@@ -35,5 +35,11 @@ public class LoginController {
 		 return "member/login_ok";
 		 //return "";
 	}
+	
+	@RequestMapping("member/logout.do")
+	public String member_logout(HttpSession session){
+		session.invalidate();
+		return "member/logout_ok";
+	}
 
 }
