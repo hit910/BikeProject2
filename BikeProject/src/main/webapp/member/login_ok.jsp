@@ -18,6 +18,8 @@
    </c:when>
    
    <c:otherwise>
-   		<c:redirect url="main.do"/>
+   		<script>
+   			window.parent.location.reload();
+   		</script>
    	</c:otherwise>
 </c:choose>

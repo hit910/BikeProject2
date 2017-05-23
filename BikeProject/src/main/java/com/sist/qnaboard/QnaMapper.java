@@ -19,4 +19,7 @@ public interface QnaMapper {
 		+"FROM qna_board ORDER BY b_no DESC)) "
 		+"WHERE num BETWEEN #{start} AND #{end}")
 		public List<QnaVO> getQnaList(Map map);
+		
+		@Select("SELECT CEIL(COUNT(*)/10) FROM qna_board")
+		public int qnaTotalPage();
 }

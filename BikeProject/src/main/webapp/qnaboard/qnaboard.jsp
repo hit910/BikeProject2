@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script type="text/javascript">
+<!-- 	<script type="text/javascript">
 	   $(function(){
 	      $.ajax({
 	         type:"POST",
@@ -19,7 +19,7 @@
 	         }
 	      });
 	   });
-	</script>
+	</script> -->
 
 </head>
 <body id="qnaBody">
@@ -32,47 +32,42 @@
 			
 			<!-- 게시판 제목 부분 -->
 			<table id="qna_table_header">
-				<tr>
-					<td class="table_header_no">글번호</td>
-					<td class="table_header_title">제목</td>
-					<td class="table_header_name">글쓴이</td>
-					<td class="table_header_date">날짜</td>
+				<tr class="qnaTr">
+					<td id="table_header_no">글번호</td>
+					<td id="table_header_title">제목</td>
+					<td id="table_header_name">글쓴이</td>
+					<td id="table_header_date">날짜</td>
 				</tr>
 			</table>
 			
 			<!-- 게시판 게시글 리스트 부분 -->
 			<table id="qna_table_content">
-				<!-- <tr>
-					<td class="table_header_no">글번호</td>
-					<td class="table_header_title">제목</td>
-					<td class="table_header_name">글쓴이</td>
-					<td class="table_header_date">날짜</td>
-				</tr>
-				<tr>
-					<td class="table_header_no">글번호</td>
-					<td class="table_header_title">제목</td>
-					<td class="table_header_name">글쓴이</td>
-					<td class="table_header_date">날짜</td>
-				</tr>
-				<tr>
-					<td class="table_header_no">글번호</td>
-					<td class="table_header_title">제목</td>
-					<td class="table_header_name">글쓴이</td>
-					<td class="table_header_date">날짜</td>
-				</tr> -->
+				
 				<c:forEach var="vo" items="${list }">
-					<tr>
-						<td class="table_header_no">${vo.b_no }</td>
-						<td class="table_header_title">${vo.b_title }</td>
-						<td class="table_header_name">${vo.b_name }</td>
-						<td class="table_header_date">${vo.b_regdate }</td>
+					<tr class="qnaTr">
+						<td id="table_content_no">${vo.b_no }</td>
+						<td id="table_content_title">
+							<a href="content.do?b_no=${vo.b_no }">${vo.b_title }</a>
+						</td>
+						<td id="table_content_name">${vo.b_name }</td>
+						<td id="table_content_date">
+							<fmt:formatDate value="${vo.b_regdate }" pattern="yyyy-MM-dd"/>
+						</td>
 					</tr>
 				</c:forEach>
 			</table>
 			
 			<table id="qna_table_bottom">
 				<tr>
-					<td>1111111111111111111</td>
+					<td align="right">
+					<a href="qnaboard.do?page=${curpage>1?curpage-1:curpage }">
+						<img alt="앞으로" src="image/btn_pagePrev.gif" border="0">
+					</a>&nbsp;
+					<a href="qnaboard.do?page=${curpage<totalPage?curpage+1:curpage }">
+						<img alt="뒤로" src="image/btn_pageNext.gif" border="0">
+					</a>&nbsp;&nbsp;
+					${curpage } page / ${totalPage } pages					
+				</td>
 				</tr>
 			</table>
 		</div>

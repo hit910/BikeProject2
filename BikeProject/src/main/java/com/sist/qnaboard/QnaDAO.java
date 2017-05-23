@@ -15,5 +15,9 @@ public class QnaDAO {
 	public List<QnaVO> qnaList(Map map) {
 		return qnamapper.getQnaList(map);
 	}
+	
+	public int qnaTotalPage(){
+		return qnamapper.qnaTotalPage();
+	}
 
 }
