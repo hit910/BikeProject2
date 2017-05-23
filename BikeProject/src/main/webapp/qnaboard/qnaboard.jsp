@@ -9,17 +9,17 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-<!-- 	<script type="text/javascript">
+<script type="text/javascript">
 	   $(function(){
 	      $.ajax({
 	         type:"POST",
 	         url:"qnaboard/qnaboard.do",
 	         success:function(response){
-	            $("#qnaboard_div").html(response);
+	            $("#qna_table_content").html(response);
 	         }
 	      });
 	   });
-	</script> -->
+	</script>
 
 </head>
 <body id="qnaBody">

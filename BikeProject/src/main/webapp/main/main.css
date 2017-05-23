@@ -74,12 +74,9 @@
 		color: white;
 	}
 	
-#estimate .dropdown a:HOVER {
-	background: black;
-	color: #00ABDF;
-	-webkit-transition-duration: 0.4s;
-	transition-duration: 0.4s;
-	cursor: pointer;
+#myPage .dropdown a{
+		display: block;
+		color: white;
 	}
 	
 #estimate .dropdown a:HOVER {
@@ -89,8 +86,20 @@
 	transition-duration: 0.4s;
 	cursor: pointer;
 	}
+	
+#myPage .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
 
 #estimate:HOVER .dropdown {
+		display: block;
+	}
+	
+#myPage:HOVER .dropdown {
 		display: block;
 	}
 

@@ -77,7 +77,7 @@
         </div>
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="menu nav navbar-nav navbar-right">
-				<li class="page-scroll"><a href="#homeLink">홈</a></li>
+				<!-- <li class="page-scroll"><a href="#homeLink">홈</a></li> -->
 				<li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
 				<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
 					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
@@ -91,14 +91,19 @@
 				<li class="page-scroll"><a href="#qnaboard">묻고 답하기</a></li>
 				<li class="page-scroll"><a href="#">동호회</a></li>
 				<li class="page-scroll"><a href="#">초보 공간</a></li>
-				<li id="login">
-					<c:if test="${sessionScope.id==null }">
-						<a href="#">로그인</a>
+				<c:if test="${sessionScope.id==null }">
+					<li id="login"><a href="#">로그인</a></li>
+				</c:if>
+				<c:if test="${sessionScope.id!=null }">
+					<li id="myPage"><a href="#">마이 페이지
+					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+						<div class="dropdown">
+							<a href="#estimateLink">주문 정보 확인</a>
+							<a href="#">회원 정보 수정</a>
+							<a href="logout">로그아웃</a>
+						</div>
+					</li>
 					</c:if>
-					<c:if test="${sessionScope.id!=null }">
-						<a href="#">로그아웃</a>
-					</c:if>
-				</li>
 			</ul>
 		</div>
 		</nav>
