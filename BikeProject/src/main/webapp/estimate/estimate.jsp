@@ -35,7 +35,7 @@
 			</div>
 		</c:if>
 		<c:if test="${sessionScope.id!=null }">
-			<c:if test="${sessionScope.type eq 'customer' }">
+			<%-- <c:if test="${sessionScope.type eq 'customer' }"> --%>
 				<div id="estimate_home">
 					<div id="estimate_title">
 						온라인 견적서
@@ -56,12 +56,12 @@
 						<!--  -->
 					</div>
 				</div>
-			</c:if>
+			<%-- </c:if>
 			<c:if test="${sessionScope.type eq 'seller' }">
 				<div>
 					seller page
 				</div>
-			</c:if>
+			</c:if> --%>
 		</c:if>
 	</center>
 	</section>

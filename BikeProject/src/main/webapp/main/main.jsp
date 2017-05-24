@@ -94,7 +94,7 @@
 				</li>
 				</c:if>
 				<c:if test="${sessionScope.id!=null }">
-					<c:if test="${sessionScope.type eq 'customer' }">
+					<c:if test="${sessionScope.type == 'customer' }">
 					<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
 						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 						

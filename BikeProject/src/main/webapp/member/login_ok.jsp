@@ -19,13 +19,6 @@
    
    <c:otherwise>
    		<script>
-   			console.log('id=' + sessionScope.id +
-   					'pwd=' + sessionScope.pwd +
-   					'name=' + sessionScope.name +
-   					'addr=' + sessionScope.addr +
-   					'phone=' + sessionScope.phone +
-   					'email=' + sessionScope.email +
-   					'check=' + sessionScope.check);
    			window.parent.location.reload();
    		</script>
    	</c:otherwise>
