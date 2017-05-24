@@ -12,7 +12,7 @@
 		send.submit();
 	};    
 	function entersend() {
-		if(window.event.keyCode==13) loginsend();
+		if(window.child.event.keyCode==13) loginsend();
 	};
 </script>
 </head>
@@ -22,7 +22,7 @@
 			<div id="loginContainer">
 				<input type="text" name="id" placeholder="아이디" id="idBox">
 				<input type="password" name="pwd" placeholder="패스워드" id="pwdBox">
-				<input type="button" value="로그인" id="loginBtn" onclick="loginsend();">
+				<input type="button" value="로그인" id="loginBtn" onclick="loginsend();" onkeydown="entersend();">
 				<a href="#" id="join">회원가입</a>
 			</div>
 	</center>
