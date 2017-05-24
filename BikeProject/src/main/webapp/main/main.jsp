@@ -82,12 +82,8 @@
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="menu nav navbar-nav navbar-right">
 				<!-- <li class="page-scroll"><a href="#homeLink">홈</a></li> -->
-				<c:if test="${isUser == 0 }"><!-- 구매자 화면 -->
 				<li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
-				</c:if>
-				<c:if test="${isUser == 1 }"><!-- 판매자 화면 -->
-				<li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
-				</c:if>
+				<c:if test="${sessionScope.id==null }">
 				<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
 					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 					
@@ -96,6 +92,29 @@
 						<a href="#">견적 질문</a>
 					</div>
 				</li>
+				</c:if>
+				<c:if test="${sessionScope.id!=null }">
+					<c:if test="${sessionScope.type eq 'customer' }">
+					<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
+						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+						
+						<div class="dropdown">
+							<a href="#estimateLink">온라인 견적</a>
+							<a href="#">견적 질문</a>
+						</div>
+					</li>
+					</c:if>
+					<c:if test="${sessionScope.type eq 'seller' }">
+					<li class="page-scroll" id="estimate"><a href="#estimateLink">견적 내기
+						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+						
+						<div class="dropdown">
+							<a href="#">상품 등록</a>
+							<a href="#">견적 질문</a>
+						</div>
+					</li>
+					</c:if>
+				</c:if>
 				
 				<li class="page-scroll"><a href="#qnaboard">묻고 답하기</a></li>
 				<li class="page-scroll"><a href="#">동호회</a></li>
@@ -104,7 +123,7 @@
 					<li id="login"><a href="#">로그인</a></li>
 				</c:if>
 				<c:if test="${sessionScope.id!=null }">
-					<li id="myPage"><a href="#">마이 페이지
+					<li id="myPage"><a href="#"> <c:out value="${sessionScope.type }"></c:out>
 					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 						<div class="dropdown">
 							<a href="#estimateLink">주문 정보 확인</a>

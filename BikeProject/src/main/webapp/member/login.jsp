@@ -10,7 +10,10 @@
 <script type="text/javascript">
 	function loginsend(){
 		send.submit();
-	}      
+	};    
+	function entersend() {
+		if(window.event.keyCode==13) loginsend();
+	};
 </script>
 </head>
 <body>

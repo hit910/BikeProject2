@@ -7,7 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sist.member.CustomerDAO;
+import com.sist.member.LoginDAO;
 
 @Controller
 public class MainController {

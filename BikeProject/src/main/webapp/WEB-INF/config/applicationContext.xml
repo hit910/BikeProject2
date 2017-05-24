@@ -31,7 +31,7 @@
 	/>
 	<bean id="customer_mapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
 		p:sqlSessionFactory-ref="ssf"
-		p:mapperInterface="com.sist.member.CustomerMapper"
+		p:mapperInterface="com.sist.member.LoginMapper"
 	/>
 	<bean id="qna_mapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
 		p:sqlSessionFactory-ref="ssf"

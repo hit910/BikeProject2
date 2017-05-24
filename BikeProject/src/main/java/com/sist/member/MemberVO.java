@@ -1,12 +1,12 @@
 package com.sist.member;
 
-public class CustomerVO {
+public class MemberVO {
 	private String c_id;
 	private String c_pwd;
 	private String c_name;
 	private String c_addr;
 	private String c_phon;
-	private String c_mail;
+	private String c_email;
 	
 	public String getC_id() {
 		return c_id;
@@ -39,10 +39,10 @@ public class CustomerVO {
 		this.c_phon = c_phon;
 	}
 	public String getC_mail() {
-		return c_mail;
+		return c_email;
 	}
 	public void setC_mail(String c_mail) {
-		this.c_mail = c_mail;
+		this.c_email = c_mail;
 	}
 	
 }
