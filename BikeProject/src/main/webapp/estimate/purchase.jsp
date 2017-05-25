@@ -47,7 +47,6 @@ function purchase(){
 </head>
 <body>
 	<center>
-	<form action="puchase_ok.jsp" method="post">
 	<div id="purchaseContainer">
 		<table>
 			<tr>
@@ -74,7 +73,6 @@ function purchase(){
 			</tr>
 		</table>
 	</div>
-	</form>
 	</center>
 </body>
 </html>

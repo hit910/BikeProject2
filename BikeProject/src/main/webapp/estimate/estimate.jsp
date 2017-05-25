@@ -19,8 +19,8 @@
 				content: 'estimate/purchase.jsp',
 				player: 'iframe',
 				title: 'Payment',
-				width: 1280,
-				height: 700
+				width: 1000,
+				height: 550
 			});
 		});
 	});
