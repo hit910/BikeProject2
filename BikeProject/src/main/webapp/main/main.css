@@ -79,6 +79,11 @@
 		color: white;
 	}
 	
+#loginMenu .dropdown a{
+		display: block;
+		color: white;
+	}
+	
 #estimate .dropdown a:HOVER {
 	background: black;
 	color: #00ABDF;
@@ -100,6 +105,22 @@
 	}
 	
 #myPage:HOVER .dropdown {
+		display: block;
+	}
+
+#loginMenu .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+
+#loginMenu:HOVER .dropdown {
+		display: block;
+	}
+	
+#loginMenu:HOVER .dropdown {
 		display: block;
 	}
 

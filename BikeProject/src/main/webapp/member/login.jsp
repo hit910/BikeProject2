@@ -6,6 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <link rel="stylesheet" type="text/css" href="login.css">
 <script type="text/javascript">
 	function loginsend(){
@@ -14,6 +16,22 @@
 	function entersend() {
 		if(window.child.event.keyCode==13) loginsend();
 	};
+	
+	Shadowbox.init({
+		players:["iframe"]
+	});
+	
+	$(function(){
+		$('#join').click(function(){
+			Shadowbox.open({
+				content: 'member/joinForm.jsp',
+				player: 'iframe',
+				title: 'JOIN',
+				width: 500,
+				height: 500
+			});
+		});
+	});
 </script>
 </head>
 <body>
@@ -23,7 +41,7 @@
 				<input type="text" name="id" placeholder="아이디" id="idBox">
 				<input type="password" name="pwd" placeholder="패스워드" id="pwdBox">
 				<input type="button" value="로그인" id="loginBtn" onclick="loginsend();" onkeydown="entersend();">
-				<a href="#" id="join">회원가입</a>
+				<!-- <a href="#" id="join">회원가입</a> -->
 			</div>
 	</center>
 	</form>
