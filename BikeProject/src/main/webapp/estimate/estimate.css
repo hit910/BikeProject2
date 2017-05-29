@@ -203,3 +203,26 @@
 		font-weight: bold;
 		border: 2px solid #00ABDF;
 }
+
+    .resultBtn{
+		background-color: #00ABDF;
+		border: none;
+		color: white;
+		padding: 20px 30px;
+		margin-left: 0px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	
+	.resultBtn:HOVER {
+		background-color: white;
+		color: #00ABDF;
+		font-weight: bold;
+		border: 2px solid #00ABDF;
+}

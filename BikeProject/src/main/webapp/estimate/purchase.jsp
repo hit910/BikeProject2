@@ -37,12 +37,20 @@ function purchase(){
 	    } else {
 	        var msg = '결제에 실패하였습니다.';
 	        msg += '에러내용 : ' + rsp.error_msg;
-	        location.href="testMain.jsp";
+	        window.parent.location.reload();
 	    }
 	    alert(msg);
 	});
 };
 
+function cancel(){
+	if(confirm("정말 취소하시겠습니까?")==true){
+		window.parent.location.reload();
+		/* location.href="testMain.jsp"; */
+	}else{
+		return;
+	}
+};
 
 </script>
 </head>
@@ -101,7 +109,7 @@ function purchase(){
 					<div class="customerMenuInfo" id="pay">카카오 페이</div>
 				</div>
 				<input class="payBtn" type="button" value="결제하기" onclick="purchase();">
-				<input class="payBtn" type="button" value="취소하기" onclick="javascript:window.parent.location.reload();">
+				<input class="payBtn" type="button" value="취소하기" onclick="cancel();">
 			</div>
 		</div>
 	</center>

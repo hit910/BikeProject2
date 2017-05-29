@@ -30,7 +30,7 @@
     <link rel="stylesheet" type="text/css" href="main/main.css">
     <link rel="stylesheet" type="text/css" href="main/custom.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
+	<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
 	$(function(){
 		$(window).scroll(function(){
@@ -120,12 +120,12 @@
 				<li class="page-scroll"><a href="#">동호회</a></li>
 				<li class="page-scroll"><a href="#">초보 공간</a></li>
 				<c:if test="${sessionScope.id==null }">
-					<li id="loginMenu"><a href="#">로그인
+					<li class="page-scroll" id="loginMenu"><a href="#home">로그인
 							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</a>
 						<div class="dropdown">
-							<a href="#" id="login">로그인</a>
-							<a  class="page-scroll" href="#join">회원가입</a>
+							<a href="#home" id="login">로그인</a>
+							<a href="#joinLink">회원가입</a>
 						</div>
 					</li>
 				</c:if>
@@ -175,5 +175,6 @@
 
     <!-- Theme JavaScript -->
     <script src="disign/js/freelancer.min.js"></script>
+
 </body>
 </html>
