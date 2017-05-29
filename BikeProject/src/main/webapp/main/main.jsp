@@ -120,16 +120,18 @@
 				<li class="page-scroll"><a href="#">동호회</a></li>
 				<li class="page-scroll"><a href="#">초보 공간</a></li>
 				<c:if test="${sessionScope.id==null }">
-					<li id="loginMenu"><a href="#">로그인<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+					<li id="loginMenu"><a href="#">로그인
+							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						</a>
 						<div class="dropdown">
 							<a href="#" id="login">로그인</a>
-							<a href="#join">회원가입</a>
+							<a  class="page-scroll" href="#join">회원가입</a>
 						</div>
 					</li>
 				</c:if>
 				<c:if test="${sessionScope.id!=null }">
 					<li id="myPage"><a href="#"> <c:out value="${sessionScope.type }"></c:out>
-					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 						<div class="dropdown">
 							<a href="#estimateLink">주문 정보 확인</a>
 							<a href="#update">회원 정보 수정</a>

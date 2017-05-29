@@ -5,6 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
+<link rel="stylesheet" type="text/css" href="estimate.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
 <script type="text/javascript" src="https://service.iamport.kr/js/iamport.payment-1.1.2.js"></script>
 <script type="text/javascript">
@@ -47,32 +48,62 @@ function purchase(){
 </head>
 <body>
 	<center>
-	<div id="purchaseContainer">
-		<table>
-			<tr>
-				<td>이름</td>
-				<td><input type="text" name="buyer_name" size="5"></td>
-			</tr>
-			<tr>
-				<td>이메일</td>
-				<td><input type="text" name="buyer_email" size="10"></td>
-			</tr>
-			<tr>
-				<td>전화번호</td>
-				<td><input type="text" name="buyer_tel"size="5"></td>
-			</tr>
-			<tr>
-				<td>주소</td>
-				<td><input type="text" name="buyer_addr" size="10"></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<input type="button" value="결제하기" onclick="purchase();">
-					<input type="button" value="취소하기">
-				</td>
-			</tr>
-		</table>
-	</div>
+		<div id="purchaseContainer">
+			<div id="itemsContainer">
+				<div id="purchaseHeader">
+					<font style="font-size: 20px; font-weight: bold;">구매 목록</font>
+				</div>
+				<div id="items">
+					<table id="itemsTable">
+						<tr>
+							<th width="20%" align="center">품목</th>
+							<th width="40%" align="center">이름</th>
+							<th width="10%" align="center">수량</th>
+							<th width="30%" align="center">가격</th>
+						</tr>
+					</table>
+					<div id="scrollList">
+						<table border="0" cellspacing="1" cellpadding="0" width="100%">
+							<tr>
+								<td width="20%" align="center">프레임</td>
+								<td width="40%" align="center">비앙키 올트레 xl4</td>
+								<td width="10%" align="center">1</td>
+								<td width="30%" align="center">5,000,000</td>
+							</tr>
+						</table>
+					</div>
+				</div>
+				<div id="itemTotal">
+					<div id="itemTotalLeft">
+						<font style="font-weight: bold;">총 금액</font>
+					</div>
+					<div id="itemTotalRight">
+						<font style="color: red; font-weight: bold;">6000000 원</font>
+					</div>
+				</div>
+			</div>
+			<div id="customerContainer">
+				<div id="purchaseHeader">
+					<font style="font-size: 20px; font-weight: bold;">구매자 정보</font>
+				</div>
+				<div id="customerInfo">
+					<div class="customerMenu">아이디</div>
+					<div class="customerMenuInfo" id="id">IU</div>
+					<div class="customerMenu">이름</div>
+					<div class="customerMenuInfo" id="name">한치훈</div>
+					<div class="customerMenu">이메일</div>
+					<div class="customerMenuInfo" id="email">asd@asd.com</div>
+					<div class="customerMenu" >전화번호</div>
+					<div class="customerMenuInfo" id="phone">010-3634-8433</div>
+					<div class="customerMenu">주소</div>
+					<div class="customerMenuInfo" id="addr">경기도 김포시 장기동</div>
+					<div class="customerMenu">결제 방식</div>
+					<div class="customerMenuInfo" id="pay">카카오 페이</div>
+				</div>
+				<input class="payBtn" type="button" value="결제하기" onclick="purchase();">
+				<input class="payBtn" type="button" value="취소하기" onclick="javascript:window.parent.location.reload();">
+			</div>
+		</div>
 	</center>
 </body>
 </html>

@@ -60,3 +60,146 @@
 	background-color: white;
 /* 	overflow: auto; */
 }
+
+/* 구매 페이지 */
+#purchaseContainer{
+		margin:0px;
+		padding:0px;
+		width: 1000;
+		height: 550;
+	}
+	#itemsContainer{
+		margin-top:25px;
+		margin-left: 30px;
+		padding:0px;
+		float: left;
+		width:450px;
+		height:500px;
+		background-color: white;
+	}
+	#purchaseHeader{
+		width:400px;
+		height: 40px;
+		margin-top: 15px;
+	}
+	#items{
+		margin:0px;
+		padding:0px;
+		width:400px;
+		height: 350px;
+		background-color: #F6F6F6;
+		border: 1px solid #BDBDBD;
+   		text-align: center;
+	}
+	#customerContainer{
+		margin-top:25px;
+		margin-right:30px;
+		padding:0px;
+		float: right;
+		width:450px;
+		height: 500px;
+		background-color: white;
+	}
+	#customerInfo{
+		margin:0px;
+		padding:0px;
+		width:400px;
+		height: 350px;
+	}
+/* 	    #items{
+   		margin:0px;
+   		padding:0px;
+   		width: 570px;
+   		height: 250px;
+   		border: 1px solid #BDBDBD;
+   		border-radius: 10px;
+   } */
+    #itemsTable th{
+    	font-size: 15px;
+    	text-align: center;
+    }
+    #itemsTable{
+    	border:0;
+    	cellspacing:1px;
+    	cellpadding:0;
+    	width:100%; 
+    	border-collapse: collapse;
+    }
+    
+    #itemsTable th{
+    	border-bottom: 1px solid #BDBDBD;
+    }
+    
+    #itemsTable tr{
+    	height: 34px;
+    }
+    #items td{
+    	border-bottom: 1px dotted #BDBDBD;
+    }
+    #items tr{
+    	height: 34px;
+    }
+    
+    #scrollList{
+    	overflow:auto;
+    	overflow-x:hidden;
+    	background-color: white;
+    }
+	#itemTotal{
+		width:83%;
+    	height: 20%px;
+    	padding: 15px;
+    	background-color: #F6F6F6;
+    	display: inline-block;
+	}    
+	#itemTotalLeft{
+		width: 30%;
+		height: 5%;
+		padding: 10px;
+		float: left;
+	}
+	#itemTotalRight{
+		width: 40%;
+		height: 5%;
+		padding: 10px;
+		float: right;
+	}
+    .customerMenu{
+    	display: inline-block;
+    	background-color: #F6F6F6;
+    	width:30%;
+    	height: 20%px;
+    	padding: 15px;
+    	margin-bottom: 5px;
+    	font-weight: bold;
+    }
+    .customerMenuInfo{
+    	display: inline-block;
+    	background-color: white;
+    	width:50%;
+    	height: 20%px;
+    	padding: 15px;
+    	margin-bottom: 5px;
+    }
+    .payBtn{
+		background-color: #00ABDF;
+		border: none;
+		color: white;
+		padding: 25px 63px;
+		margin-left: 0px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		-webkit-transition-duration: 0.4s;
+		transition-duration: 0.4s;
+		cursor: pointer;
+		font-weight: bold;
+	}
+	
+	.payBtn:HOVER {
+		background-color: white;
+		color: #00ABDF;
+		font-weight: bold;
+		border: 2px solid #00ABDF;
+}
