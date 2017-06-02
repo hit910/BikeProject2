@@ -15,7 +15,12 @@ public class LoginController {
 	@Autowired
 	private LoginDAO dao;
 	
-	@RequestMapping("member/login.do")
+	@RequestMapping("loginGo.do")
+	public String login(String url){
+		return "member/login";
+	}
+	
+	@RequestMapping("login.do")
 	public String member_login(String id,String pwd, Model model,HttpSession session){
 		int count=dao.loginIdCheck(id);
 		String type = dao.loginCheckType(id);

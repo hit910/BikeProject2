@@ -10,9 +10,12 @@
 	<section id="introduceLink">
 	<center>
 		<div id="introduce_home">
-			<div id="introduce_title">
-				자.알.바 소개
-			</div>
+			<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
+	                <div class="col-lg-12 text-center">
+	                    <h2>Who are we?</h2>
+	                    <!-- <hr class="star-primary"> -->
+	                </div>
+		</div>
 			
 			<div id="introduce_body2">		
 				<ul>

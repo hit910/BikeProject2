@@ -26,8 +26,11 @@
 	<section id="qnaboard">
 	<center>
 		<div id="qnaboard_div">
-			<div id="qnaboard_title">
-				묻고답하기
+			<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
+	                <div class="col-lg-12 text-center">
+	                    <h2>Q n A</h2>
+	                    <!-- <hr class="star-primary"> -->
+	                </div>
 			</div>
 			
 			<!-- 게시판 제목 부분 -->

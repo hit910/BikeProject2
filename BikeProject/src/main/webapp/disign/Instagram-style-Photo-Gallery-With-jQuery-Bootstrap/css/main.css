@@ -46,7 +46,7 @@
     max-width: 3000px;
 }
 .carouselGallery-col-60{
-    float: left;
+    /* float: left; */
     width: 60%;
 
 }

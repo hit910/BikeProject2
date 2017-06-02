@@ -13,4 +13,16 @@ public class EstimateController {
 		   
 		return "estimate/estimate";
 	}
+	
+	@RequestMapping("purchase.do")
+	public String purchase(String url){
+		
+		return "estimate/purchase";
+	}
+	
+	@RequestMapping("myOrder.do")
+	public String myOrder(String url){
+		
+		return "estimate/myOrder";
+	}
 }

@@ -16,7 +16,7 @@
 	$(function(){
 		$('#payment').click(function(){
 			Shadowbox.open({
-				content: 'estimate/purchase.jsp',
+				content: 'purchase.do',
 				player: 'iframe',
 				title: 'Payment',
 				width: 1000,
@@ -37,24 +37,24 @@
 		<c:if test="${sessionScope.id!=null }">
 			<%-- <c:if test="${sessionScope.type eq 'customer' }"> --%>
 				<div id="estimate_home">
-					<div id="estimate_title">
-						온라인 견적서
-					</div>
-
+					<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
+	                <div class="col-lg-12 text-center">
+	                    <h2>Online estimate sheet</h2>
+	                    <!-- <hr class="star-primary"> -->
+	                </div>
+				</div>
+					<div id="estimate_Container" style="width: 100%; height: 100%; display: inline-block;">
 					<div id="estimate_product">
 						<div id="estimate_prodect_list">
 		
-						</div>
-						<div id="estimate_prodect_btn">
-							<input type="button" value="다음">
-							<input type="button" value="이전">
-							<input type="button" value="결제하기" id="payment">
 						</div>
 					</div>
 					
 					<div id="estimate_select">
 						<!--  -->
+							<input type="button" value="결제하기" id="payment">
 					</div>
+				</div>
 				</div>
 			<%-- </c:if>
 			<c:if test="${sessionScope.type eq 'seller' }">

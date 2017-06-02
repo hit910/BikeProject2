@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
-<link rel="stylesheet" type="text/css" href="login.css">
+<link rel="stylesheet" type="text/css" href="member/login.css">
 <script type="text/javascript">
 	function loginsend(){
 		send.submit();
@@ -16,22 +16,6 @@
 	function entersend() {
 		if(window.child.event.keyCode==13) loginsend();
 	};
-	
-	Shadowbox.init({
-		players:["iframe"]
-	});
-	
-	$(function(){
-		$('#join').click(function(){
-			Shadowbox.open({
-				content: 'member/joinForm.jsp',
-				player: 'iframe',
-				title: 'JOIN',
-				width: 500,
-				height: 500
-			});
-		});
-	});
 </script>
 </head>
 <body>

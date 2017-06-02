@@ -9,6 +9,14 @@
 <link rel="stylesheet" type="text/css" href="estimate/estimate.css">
 <link rel="stylesheet" type="text/css" href="introduce/present.css">
 <link rel="stylesheet" type="text/css" href="qnaboard/qnaboard.css">
+<link
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet"
+	integrity="sha256-7s5uDGW3AHqw6xtJmNNtr+OBRJUlgkNJEo78P4b0yRw= sha512-nNo+yCHEyn0smMxSswnf/OnX6/KwJuZTlNZBjauKhTK0c+zT+q5JOCx0UFhXQ6rJR9jg6Es8gPuD2uZcYDLqSw=="
+	crossorigin="anonymous">
+<link
+	href="disign/Instagram-style-Photo-Gallery-With-jQuery-Bootstrap/css/main.css"
+	rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="disign/shadow/css/shadowbox.css">
 	<!-- Bootstrap Core CSS -->
     <link href="disign/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -49,7 +57,7 @@
 	$(function(){
 		$('#login').click(function(){
 			Shadowbox.open({
-				content: 'member/login.jsp',
+				content: 'loginGo.do',
 				player: 'iframe',
 				title: 'Sign in',
 				width: 300,
@@ -62,6 +70,17 @@
 		logout.submit();
 	}
 	
+	$(function(){
+		$('#myOrder').click(function(){
+			Shadowbox.open({
+				content: 'myOrder.do',
+				player: 'iframe',
+				title: 'MY ORDER LIST',
+				width: 1000,
+				height: 550
+			});
+		});
+	});
 </script>
 </head>
 <body body id="page-top" class="index">
@@ -118,9 +137,9 @@
 				
 				<li class="page-scroll"><a href="#qnaboard">묻고 답하기</a></li>
 				<li class="page-scroll"><a href="#">동호회</a></li>
-				<li class="page-scroll"><a href="#">초보 공간</a></li>
+				<li class="page-scroll"><a href="#noviceLink">초보 공간</a></li>
 				<c:if test="${sessionScope.id==null }">
-					<li class="page-scroll" id="loginMenu"><a href="#home">로그인
+					<li id="loginMenu"><a href="#home">로그인
 							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</a>
 						<div class="dropdown">
@@ -133,7 +152,7 @@
 					<li id="myPage"><a href="#"> <c:out value="${sessionScope.type }"></c:out>
 					<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 						<div class="dropdown">
-							<a href="#estimateLink">주문 정보 확인</a>
+							<a href="#home" id="myOrder">주문 정보 확인</a>
 							<a href="#update">회원 정보 수정</a>
 							<form name="logout" action="member/logout.do" method="post">
 								<a href="#" onclick="javascript:logoutsend();">로그아웃</a>
@@ -151,6 +170,7 @@
 		<jsp:include page="${introduce }"></jsp:include>
 		<jsp:include page="${estimate }"></jsp:include>
 		<jsp:include page="${qnaboard }"></jsp:include>
+		<jsp:include page="${novice }"></jsp:include>
 		<c:if test="${sessionScope.id!=null }">
 			<jsp:include page="${update }"></jsp:include>
 		</c:if>
