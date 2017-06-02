@@ -38,24 +38,85 @@
 			<%-- <c:if test="${sessionScope.type eq 'customer' }"> --%>
 				<div id="estimate_home">
 					<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
-	                <div class="col-lg-12 text-center">
-	                    <h2>Online estimate sheet</h2>
-	                    <!-- <hr class="star-primary"> -->
-	                </div>
-				</div>
-					<div id="estimate_Container" style="width: 100%; height: 100%; display: inline-block;">
-					<div id="estimate_product">
-						<div id="estimate_prodect_list">
-		
+		                <div class="col-lg-12 text-center">
+		                    <h2>Online estimate sheet</h2>
+		                    <!-- <hr class="star-primary"> -->
+		                </div>
+					</div>
+					<div id="estimate_Container" style="width: 60%; height: 100%; display: inline-block;">
+						<div id="estimate_product">
+							<div id="estimate_prodect_list">
+								<div id="purchaseHeader">
+									<font style="font-size: 20px; font-weight: bold;">
+										프레임
+									</font>
+								</div>
+								<div id="items">
+									<table id="itemsTable">
+										<tr>
+											<th width="20%" align="center">품목</th>
+											<th width="40%" align="center">이름</th>
+											<th width="10%" align="center">수량</th>
+											<th width="30%" align="center">가격</th>
+										</tr>
+									</table>
+									<div id="scrollList">
+										<table border="0" cellspacing="1" cellpadding="0" width="100%">
+											<tr>
+												<td width="20%" align="center">프레임</td>
+												<td width="40%" align="center">비앙키 올트레 xl4</td>
+												<td width="10%" align="center">1</td>
+												<td width="30%" align="center">5,000,000</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<div id="estimate_select">
+							<div id="estimate_select_list">
+								<div id="purchaseHeader">
+									<font style="font-size: 20px; font-weight: bold;">
+										내 선택 목록
+									</font>
+								</div>
+									<div id="items">
+										<table id="itemsTable">
+											<tr>
+												<th width="20%" align="center">품목</th>
+												<th width="40%" align="center">이름</th>
+												<th width="10%" align="center">수량</th>
+												<th width="20%" align="center">가격</th>
+												<th width="10%" align="center">비고</th>
+											</tr>
+										</table>
+										<div id="scrollList">
+											<table border="0" cellspacing="1" cellpadding="0" width="100%">
+												<tr>
+													<td width="20%" align="center">프레임</td>
+													<td width="40%" align="center">비앙키 올트레 xl4</td>
+													<td width="10%" align="center">1</td>
+													<td width="20%" align="center">5,000,000</td>
+													<td width="10%" align="center">X</td>
+												</tr>
+												<tr>
+													<td width="20%" align="center">구동계</td>
+												</tr>
+												<tr>
+													<td width="20%" align="center">휠셋</td>
+												</tr>
+												<tr>
+													<td width="20%" align="center">컴포넌트</td>
+												</tr>
+											</table>
+										</div>
+									</div>
+									<input type="button" value="결제하기" id="payment">
+								</div>
+							</div>
 						</div>
 					</div>
-					
-					<div id="estimate_select">
-						<!--  -->
-							<input type="button" value="결제하기" id="payment">
-					</div>
-				</div>
-				</div>
 			<%-- </c:if>
 			<c:if test="${sessionScope.type eq 'seller' }">
 				<div>

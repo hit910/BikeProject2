@@ -28,15 +28,15 @@
 } */
 
 #estimate_product {
-	width: 500px;
-	height: 600px;
+	width: 50%;
+	height: 80%;
 	background-color: white;
 	float: left;
 }
 
 #estimate_prodect_list {
-	width: 480px;
-	height: 580px;
+	width: 100%;
+	height: 100%;
 	background-color: red;
 	/* overflow: auto; */
 }
@@ -46,19 +46,19 @@
 	height: 45px;
 }
 
-#estimate_prodect_btn input {
+/* #estimate_prodect_btn input {
 	width: 70px;
 	height: 37px;
 	margin-top: 4px;
 	margin-bottom: 4px;
 	margin-right: 15px;
 	float: right;
-}
+} */
 
 #estimate_select {
-	width: 500px;
-	height: 600px;
-	margin-top: 20px;
+	width: 50%;
+	height: 80%;
+	/* margin-top: 20px; */
 	background-color: white;
 	float: right;
 /* 	overflow: auto; */
