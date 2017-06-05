@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="estimate/estimate.css">
 <link rel="stylesheet" type="text/css" href="introduce/present.css">
-<link rel="stylesheet" type="text/css" href="qnaboard/qnaboard.css">
+<!-- <link rel="stylesheet" type="text/css" href="qnaboard/qnaboard.css"> -->
 <link
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
 	rel="stylesheet"

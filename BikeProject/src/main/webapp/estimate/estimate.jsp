@@ -25,7 +25,7 @@
 			});
 		});
 	});
- 	$(function(){
+/*  	$(function(){
 		$.ajax({
 			type:"POST",
 			url:"estimate/estimate.do",
@@ -33,7 +33,7 @@
 				$('#estimate_Container').html(response);
 			}
 		});
-	});
+	}); */
 </script>
 </head>
 <body>
