@@ -25,15 +25,7 @@
 			});
 		});
 	});
- 	$(function(){
-		$.ajax({
-			type:"POST",
-			url:"estimate/estimate.do",
-			success:function(response){
-				$('#estimate_Container').html(response);
-			}
-		});
-	});
+	
 </script>
 </head>
 <body>

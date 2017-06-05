@@ -93,6 +93,15 @@
 			});
 		});
 	});
+ 	$(function(){
+		$.ajax({
+			type:"POST",
+			url:"estimate/estimate.do",
+			success:function(response){
+				$('#estimate_prodect_content').html(response);
+			}
+		});
+	});
 </script>
 </head>
 <body body id="page-top" class="index">
