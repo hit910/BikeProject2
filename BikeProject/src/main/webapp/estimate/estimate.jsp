@@ -6,7 +6,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script> -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
 	Shadowbox.init({
@@ -22,6 +23,15 @@
 				width: 1000,
 				height: 550
 			});
+		});
+	});
+ 	$(function(){
+		$.ajax({
+			type:"POST",
+			url:"estimate/estimate.do",
+			success:function(response){
+				$('#estimate_Container').html(response);
+			}
 		});
 	});
 </script>
@@ -53,22 +63,20 @@
 								</div>
 								<div id="items">
 									<table id="itemsTable">
-										<tr>
-											<th width="20%" align="center">품목</th>
-											<th width="40%" align="center">이름</th>
-											<th width="10%" align="center">수량</th>
-											<th width="30%" align="center">가격</th>
-										</tr>
-									</table>
-									<div id="scrollList">
-										<table border="0" cellspacing="1" cellpadding="0" width="100%">
-											<tr>
-												<td width="20%" align="center">프레임</td>
-												<td width="40%" align="center">비앙키 올트레 xl4</td>
-												<td width="10%" align="center">1</td>
-												<td width="30%" align="center">5,000,000</td>
-											</tr>
-										</table>
+						<tr>
+							<th width="50%" align="center">이름</th>
+							<th width="50%" align="center">가격</th>
+						</tr>
+					</table>
+					<div id="scrollList">
+						<table id="estimate_prodect_content" border="0" cellspacing="1" cellpadding="0" width="100%">
+							<c:forEach var="vo" items="${fList }">
+								<tr>
+									<td width="50%" align="center">${vo.fname }</td>
+									<td width="50%" align="center">${vo.fprice }</td>
+								</tr>
+							</c:forEach>
+						</table>
 									</div>
 								</div>
 							</div>
