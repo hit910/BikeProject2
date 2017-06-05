@@ -9,71 +9,57 @@
 <title>Insert title here</title>
 
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="table.css">
+<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
-	   /* $(function(){
-	      $.ajax({
-	         type:"POST",
-	         url:"qnaboard/qnaboard.do",
-	         success:function(response){
-	            $("#qna_table_content").html(response);
-	         }
-	      });
-	   }); */
-	</script>
-
+</script>
 </head>
-<body id="qnaBody">
+<body>
 	<section id="qnaboard">
 	<center>
-		<div id="qnaboard_div">
-			<div class="row" style="margin-top: 50px;margin-bottom: 50px;">
-	                <div class="col-lg-12 text-center">
-	                    <h2>Q n A</h2>
-	                    <!-- <hr class="star-primary"> -->
-	                </div>
-			</div>
-			
-			<!-- 게시판 제목 부분 -->
-			<table id="qna_table_header">
-				<tr class="qnaTr">
-					<td id="table_header_no">글번호</td>
-					<td id="table_header_title">제목</td>
-					<td id="table_header_name">글쓴이</td>
-					<td id="table_header_date">날짜</td>
-				</tr>
-			</table>
-			
-			<!-- 게시판 게시글 리스트 부분 -->
-			<table id="qna_table_content">
-				
-				<c:forEach var="vo" items="${list }">
-					<tr class="qnaTr">
-						<td id="table_content_no">${vo.b_no }</td>
-						<td id="table_content_title">
-							<a href="content.do?b_no=${vo.b_no }">${vo.b_title }</a>
-						</td>
-						<td id="table_content_name">${vo.b_name }</td>
-						<td id="table_content_date">
-							<fmt:formatDate value="${vo.b_regdate }" pattern="yyyy-MM-dd"/>
-						</td>
-					</tr>
-				</c:forEach>
-			</table>
-			
-			<table id="qna_table_bottom">
-				<tr>
-					<td align="right">
-					<a href="qnaboard.do?page=${curpage>1?curpage-1:curpage }">
-						<img alt="앞으로" src="image/btn_pagePrev.gif" border="0">
-					</a>&nbsp;
-					<a href="qnaboard.do?page=${curpage<totalPage?curpage+1:curpage }">
-						<img alt="뒤로" src="image/btn_pageNext.gif" border="0">
-					</a>&nbsp;&nbsp;
-					${curpage } page / ${totalPage } pages					
+		<h3>자료실</h3>
+		<table border="0" width="700">
+			<tr>
+				<td align="left">
+				<a href="insert.do">
+				글쓰기</a>
 				</td>
+			</tr>
+		</table>
+		
+		<table id="table_content" border="0" width="700">
+			<tr>
+				<th width="10%">번호</th>
+				<th width="45%">제목</th>
+				<th width="15%">이름</th>
+				<th width="20%">작성일</th>
+				<th width="10%">조회수</th>
+			</tr>
+			<c:forEach var="vo" items="${list }">
+				<tr id="dataTr">
+					<td width="10%" align="center">${vo.no }</td>
+					<td width="45%" align="left">
+						
+					<a href="../content.do?no=${vo.no }">${vo.subject } </a>
+					</td>
+					<td width="15%" align="center">${vo.name }</td>
+					<td width="20%" align="center">
+						<fmt:formatDate value="${vo.regdate }"
+										pattern="yyyy-MM-dd"/>
+					</td>
+					<td width="10%" align="center">${vo.hit }</td>
 				</tr>
-			</table>
-		</div>
+			</c:forEach>
+		</table>
+		<table border="0" width="700">
+			<tr>
+				<td align="right">
+					<a href="../qnaboard/qnaboard.do?page=${curpage>1 ? curpage-1:curpage }">이전</a>&nbsp;
+					<a href="../qnaboard/qnaboard.do?page=${curpage<totalpage ? curpage+1:curpage }">다음</a>&nbsp;&nbsp;
+					${curpage } page / ${totalpage } pages
+				</td>
+			</tr>
+		</table>
 	</center>
 	</section>
 </body>

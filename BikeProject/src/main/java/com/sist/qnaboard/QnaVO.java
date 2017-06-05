@@ -1,58 +1,152 @@
 package com.sist.qnaboard;
 
 import java.util.*;
-/*
- *   b_no NUMBER PRIMARY KEY ,
-	  b_name VARCHAR2(30) NOT NULL ,
-	  b_title VARCHAR2(300) NOT NULL ,
-	  b_content CLOB NOT NULL ,
-	  b_pwd VARCHAR2(12) NOT NULL ,
-	  b_regdate DATE DEFAULT SYSDATE
- */
+
+import org.springframework.web.multipart.MultipartFile;
+
 public class QnaVO {
-	private int b_no;
-	private String b_name;
-	private String b_title;
-	private String b_content;
-	private String b_pwd;
-	private Date b_regdate;
-	
-	public int getB_no() {
-		return b_no;
+	private int no;
+	private String name;
+	private String email;
+	private String subject;
+	private String content;
+	private String pwd;
+	private int hit;
+	private Date regdate;
+	private int group_id;
+	private int group_step;
+	private int group_tab;
+	private int root;
+	private int depth;
+	private String filename;
+	private String filesize;
+	private int filecount;
+	private List<MultipartFile> files=
+			new ArrayList<MultipartFile>();
+	private List<String> nameList=
+			new ArrayList<String>();
+	private List<String> sizeList=
+			new ArrayList<String>();
+	private String dbday;
+	public int getNo() {
+		return no;
 	}
-	public void setB_no(int b_no) {
-		this.b_no = b_no;
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public String getB_name() {
-		return b_name;
+	public String getName() {
+		return name;
 	}
-	public void setB_name(String b_name) {
-		this.b_name = b_name;
+	public void setName(String name) {
+		this.name = name;
 	}
-	public String getB_title() {
-		return b_title;
+	public String getEmail() {
+		return email;
 	}
-	public void setB_title(String b_title) {
-		this.b_title = b_title;
+	public void setEmail(String email) {
+		this.email = email;
 	}
-	public String getB_content() {
-		return b_content;
+	public String getSubject() {
+		return subject;
 	}
-	public void setB_content(String b_content) {
-		this.b_content = b_content;
+	public void setSubject(String subject) {
+		this.subject = subject;
 	}
-	public String getB_pwd() {
-		return b_pwd;
+	public String getContent() {
+		return content;
 	}
-	public void setB_pwd(String b_pwd) {
-		this.b_pwd = b_pwd;
+	public void setContent(String content) {
+		this.content = content;
 	}
-	public Date getB_regdate() {
-		return b_regdate;
+	public String getPwd() {
+		return pwd;
 	}
-	public void setB_regdate(Date b_regdate) {
-		this.b_regdate = b_regdate;
+	public void setPwd(String pwd) {
+		this.pwd = pwd;
 	}
-	
-	
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	public Date getRegdate() {
+		return regdate;
+	}
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	public int getGroup_id() {
+		return group_id;
+	}
+	public void setGroup_id(int group_id) {
+		this.group_id = group_id;
+	}
+	public int getGroup_step() {
+		return group_step;
+	}
+	public void setGroup_step(int group_step) {
+		this.group_step = group_step;
+	}
+	public int getGroup_tab() {
+		return group_tab;
+	}
+	public void setGroup_tab(int group_tab) {
+		this.group_tab = group_tab;
+	}
+	public int getRoot() {
+		return root;
+	}
+	public void setRoot(int root) {
+		this.root = root;
+	}
+	public int getDepth() {
+		return depth;
+	}
+	public void setDepth(int depth) {
+		this.depth = depth;
+	}
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
+	public String getFilesize() {
+		return filesize;
+	}
+	public void setFilesize(String filesize) {
+		this.filesize = filesize;
+	}
+	public int getFilecount() {
+		return filecount;
+	}
+	public void setFilecount(int filecount) {
+		this.filecount = filecount;
+	}
+	public List<MultipartFile> getFiles() {
+		return files;
+	}
+	public void setFiles(List<MultipartFile> files) {
+		this.files = files;
+	}
+	public List<String> getNameList() {
+		return nameList;
+	}
+	public void setNameList(List<String> nameList) {
+		this.nameList = nameList;
+	}
+	public List<String> getSizeList() {
+		return sizeList;
+	}
+	public void setSizeList(List<String> sizeList) {
+		this.sizeList = sizeList;
+	}
+	public String getDbday() {
+		return dbday;
+	}
+	public void setDbday(String dbday) {
+		this.dbday = dbday;
+	}
 }
+	

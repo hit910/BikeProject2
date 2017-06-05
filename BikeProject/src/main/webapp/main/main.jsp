@@ -81,6 +81,18 @@
 			});
 		});
 	});
+	
+	$(function(){
+		$('#qnaboard').click(function(){
+			Shadowbox.open({
+				content: 'board.do',
+				player: 'iframe',
+				title: 'Q&A',
+				width: 800,
+				height: 600
+			});
+		});
+	});
 </script>
 </head>
 <body body id="page-top" class="index">
@@ -135,7 +147,7 @@
 					</c:if>
 				</c:if>
 				
-				<li class="page-scroll"><a href="#qnaboard">묻고 답하기</a></li>
+				<li id="qnaboard"><a href="#home">묻고 답하기</a></li>
 				<li class="page-scroll"><a href="#">동호회</a></li>
 				<li class="page-scroll"><a href="#noviceLink">초보 공간</a></li>
 				<c:if test="${sessionScope.id==null }">
