@@ -12,6 +12,15 @@
 <link rel="stylesheet" type="text/css" href="table.css">
 <script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
+/* 	$(function(){
+		$.ajax({
+		   type:"POST",
+		   url:"qnaboard/qnaboard.do",
+		   success:function(response){
+		      $("#qna_table_content").html(response);
+		   }
+		});
+	});  */
 </script>
 </head>
 <body>

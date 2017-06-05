@@ -37,6 +37,10 @@
 		p:sqlSessionFactory-ref="ssf"
 		p:mapperInterface="com.sist.qnaboard.QnaMapper"
 	/>
+	<bean id="estimate_mapper" class="org.mybatis.spring.mapper.MapperFactoryBean"
+		p:sqlSessionFactory-ref="ssf"
+		p:mapperInterface="com.sist.estimate.EstimateMapper"
+	/>
 	<bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		p:prefix="/"
 		p:suffix=".jsp"
