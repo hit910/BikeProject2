@@ -77,42 +77,42 @@
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="name">Name</label>
-	                                <input type="text" class="form-control" placeholder="이름" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
+	                                <input type="text" class="form-control" placeholder="이름" id="name" required="" name="name" data-validation-required-message="Please enter your name." aria-invalid="false">
 	                                <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="name">Id</label>
-	                                <input type="text" class="form-control" placeholder="아이디" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
+	                                <input type="text" class="form-control" placeholder="아이디" id="id" required="" name="id" data-validation-required-message="Please enter your name." aria-invalid="false">
 	                                <p class="help-block text-danger"></p>
 	                            </div>       
 	                        </div>
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="name">Password</label>
-	                                <input type="password" class="form-control" placeholder="비밀번호" id="password" required="" data-validation-required-message="Please enter your password." aria-invalid="false">
+	                                <input type="password" class="form-control" placeholder="비밀번호" id="pwd" name="pwd" required="" data-validation-required-message="Please enter your password." aria-invalid="false">
 	                                <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>
 	                         <div class="row control-group">
 	                           <div class="form-group col-xs-12 floating-label-form-group controls">
 	                               <label for="phone">Phone Number</label>
-	                               <input type="tel" class="form-control" placeholder="전화번호" id="phone" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
+	                               <input type="tel" class="form-control" placeholder="전화번호" id="phone" name="phone" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
 	                               <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="email">Email Address</label>
-	                                <input type="email" class="form-control" placeholder="이메일" id="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="false">
+	                                <input type="email" class="form-control" placeholder="이메일" id="email" name="email" required="" data-validation-required-message="Please enter your email address." aria-invalid="false">
 	                                <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="phone">Addr</label>
-	                                <input type=text class="form-control" placeholder="주소" id="phone" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
+	                                <input type=text class="form-control" placeholder="주소" id="addr" name="addr" required="" data-validation-required-message="Please enter your phone number." aria-invalid="false">
 	                                <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>

@@ -30,12 +30,6 @@ public class EstimateController {
 		return "estimate/estimate";
 	}
 	
-/*	@RequestMapping("estimate/estimate.do")
-	public String estimate(Model model) {
-		   
-		return "estimate/estimate";
-	}*/
-	
 	@RequestMapping("purchase.do")
 	public String purchase(String url){
 		
@@ -46,5 +40,16 @@ public class EstimateController {
 	public String myOrder(String url){
 		
 		return "estimate/myOrder";
+	}
+	
+	@RequestMapping("addproduct.do")
+	public String addProduct(String combo, String name, String price, String year) {
+		System.out.println(combo);
+		System.out.println(name);
+		System.out.println(price);
+		System.out.println(year);
+		
+		fdao.insertProduct(combo, name, price, year);
+		return "estimate/addProduct_ok";
 	}
 }

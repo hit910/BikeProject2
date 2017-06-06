@@ -37,6 +37,7 @@
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="main/main.css">
     <link rel="stylesheet" type="text/css" href="main/custom.css">
+    <link rel="stylesheet" type="text/css" href="estimate/addProduct.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
@@ -180,6 +181,20 @@
 		</div>
 		<jsp:include page="${home_jsp }"></jsp:include>
 		<jsp:include page="${introduce }"></jsp:include>
+		
+		<c:if test="${sessionScope.id!=null }">
+			<c:if test="${sessionScope.type eq 'customer' }">
+				<jsp:include page="${estimate }"></jsp:include>
+			</c:if>
+			<c:if test="${sessionScope.type eq 'seller' }">
+				<jsp:include page="${addProduct }"></jsp:include>
+			</c:if>
+		</c:if>
+		
+		<c:if test="${sessionScope.id==null }">
+			<jsp:include page="${estimate }"></jsp:include>
+		</c:if>
+		
 		<jsp:include page="${estimate }"></jsp:include>
 		<jsp:include page="${qnaboard }"></jsp:include>
 		<jsp:include page="${novice }"></jsp:include>
