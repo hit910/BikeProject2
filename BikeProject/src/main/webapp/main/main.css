@@ -74,6 +74,16 @@
 		color: white;
 	}
 	
+#estimateAdmin .dropdown a{
+		display: block;
+		color: white;
+	}
+	
+#estimateNoID .dropdown a{
+		display: block;
+		color: white;
+	}
+	
 #myPage .dropdown a{
 		display: block;
 		color: white;
@@ -92,6 +102,22 @@
 	cursor: pointer;
 	}
 	
+#estimateAdmin .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+	
+#estimateNoID .dropdown a:HOVER {
+	background: black;
+	color: #00ABDF;
+	-webkit-transition-duration: 0.4s;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	}
+
 #myPage .dropdown a:HOVER {
 	background: black;
 	color: #00ABDF;
@@ -101,6 +127,14 @@
 	}
 
 #estimate:HOVER .dropdown {
+		display: block;
+	}
+	
+#estimateAdmin:HOVER .dropdown {
+		display: block;
+	}
+	
+#estimateNoID:HOVER .dropdown {
 		display: block;
 	}
 	

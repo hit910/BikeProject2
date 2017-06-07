@@ -6,7 +6,6 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="estimate/estimate.css">
 <link rel="stylesheet" type="text/css" href="introduce/present.css">
 <!-- <link rel="stylesheet" type="text/css" href="qnaboard/qnaboard.css"> -->
 <link
@@ -60,7 +59,7 @@
          Shadowbox.open({
             content: 'loginGo.do',
             player: 'iframe',
-            title: 'Sign in',
+            title: 'SIGN IN',
             width: 300,
             height: 120
          });
@@ -86,23 +85,23 @@
          });
       });
       
-      $('#pay').click(function(){
-         Shadowbox.open({
-            content: 'estimate/estimate.do',
-            player: 'iframe',
-            title: 'estimate sheet',
-            width: 1000,
-            height: 550
-         });
-      });
+      $('#estimate').click(function(){
+          Shadowbox.open({
+             content: 'estimate/estimate.do',
+             player: 'iframe',
+             title: 'ESTIMATE SHEET',
+             width: 1200,
+             height: 600
+          });
+       });
       
-      $('#addProduct').click(function(){
+      $('#estimateAdmin').click(function(){
           Shadowbox.open({
              content: 'pogba.do',
              player: 'iframe',
-             title: 'A',
-             width: 1000,
-             height: 550
+             title: 'ADD PRODUCT',
+             width: 800,
+             height: 700
           });
        });
 /*       $.ajax({
@@ -141,31 +140,32 @@
             <!-- <li class="page-scroll"><a href="#homeLink">홈</a></li> -->
             <li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
             <c:if test="${sessionScope.id==null }">
-            <li class="page-scroll" id="estimate"><a href="#home">견적 내기
+            <li class="page-scroll" id="estimateNoID"><a href="#home">견적 내기
                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-               
                <div class="dropdown">
-                  <a href="#home" id="pay">온라인 견적</a>
-                  <a href="#home">견적 질문</a>
+                  <a href="#home">로그인 하세요.</a>
                </div>
             </li>
             </c:if>
             <c:if test="${sessionScope.id!=null }">
-               <li class="page-scroll" id="estimate"><a href="#home">견적 내기
-               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-               <c:if test="${sessionScope.type == 'customer' }">
-                  <div class="dropdown">
-                     <a href="#home" id="pay">온라인 견적</a>
-                     <a href="#home">견적 질문</a>
-                  </div>
-               </c:if>
+	            <c:if test="${sessionScope.type == 'customer' }">
+	               <li class="page-scroll" id="estimate"><a href="#home">견적 내기
+	               		<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+	                  <div class="dropdown">
+	                     <a href="#home" id="pay">온라인 견적</a>
+	                     <a href="#">견적 문의</a>
+	                  </div>
+	                 </li>
+	               </c:if>
                <c:if test="${sessionScope.type eq 'seller' }">
-                  <div class="dropdown">
-                     <a href="#home" id="addProduct">상품 등록</a>
-                     <a href="#home">견적 질문</a>
-                  </div>
-               </c:if>
-               </li>
+	               <li class="page-scroll" id="estimateAdmin"><a href="#home">견적서 관리
+	             			<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+	                 <div class="dropdown">
+	                    <a href="#home" id="addProduct">상품 등록</a>
+	                    <a href="#">견적 문의</a>
+	                 </div>
+	          		</li>
+	           </c:if>
             </c:if>
             
             <li id="qnaboard"><a href="#home">묻고 답하기</a></li>
@@ -176,7 +176,7 @@
                      <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                   </a>
                   <div class="dropdown">
-                     <font id="login">로그인</font>
+                     <a href="#home" id="login">로그인</a>
                      <a href="#joinLink">회원가입</a>
                   </div>
                </li>
@@ -202,7 +202,7 @@
       <jsp:include page="${home_jsp }"></jsp:include>
       <jsp:include page="${introduce }"></jsp:include>
       
-      <c:if test="${sessionScope.id!=null }">
+<%--       <c:if test="${sessionScope.id!=null }">
          <c:if test="${sessionScope.type eq 'customer' }">
             <jsp:include page="${estimate }"></jsp:include>
          </c:if>
@@ -213,7 +213,7 @@
       
       <c:if test="${sessionScope.id==null }">
          <jsp:include page="${estimate }"></jsp:include>
-      </c:if>
+      </c:if> --%>
       <jsp:include page="${qnaboard }"></jsp:include>
       <jsp:include page="${club }"></jsp:include>
       <jsp:include page="${novice }"></jsp:include>
