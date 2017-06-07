@@ -23,17 +23,16 @@
 				width: 1000,
 				height: 550
 			});
-		});
-	});
-/*  	$(function(){
-		$.ajax({
+		});	
+/* 		$.ajax({
 			type:"POST",
 			url:"estimate/estimate.do",
 			success:function(response){
-				$('#estimate_Container').html(response);
+				$('#estimate_prodect_content').html(response);
 			}
-		});
-	}); */
+		}); */
+	});
+
 </script>
 </head>
 <body>
@@ -82,11 +81,47 @@
 							</div>
 						</div>
 					</div>
-					
 					<div id="estimate_select">
-						<!--  -->
-							<input type="button" value="결제하기" id="payment">
-					</div>
+						<div id="estimate_select_list">
+							<div id="purchaseHeader">
+								<font style="font-size: 20px; font-weight: bold;">
+									내 선택 목록
+								</font>
+							</div>
+								<div id="items">
+									<table id="itemsTable">
+										<tr>
+											<th width="20%" align="center">품목</th>
+											<th width="40%" align="center">이름</th>
+											<th width="10%" align="center">수량</th>
+											<th width="20%" align="center">가격</th>
+											<th width="10%" align="center">비고</th>
+										</tr>
+									</table>
+									<div id="scrollList">
+										<table border="0" cellspacing="1" cellpadding="0" width="100%">
+											<tr>
+												<td width="20%" align="center">프레임</td>
+												<td width="40%" align="center">비앙키 올트레 xl4</td>
+												<td width="10%" align="center">1</td>
+												<td width="20%" align="center">5,000,000</td>
+												<td width="10%" align="center">X</td>
+											</tr>
+											<tr>
+												<td width="20%" align="center">구동계</td>
+											</tr>
+											<tr>
+												<td width="20%" align="center">휠셋</td>
+											</tr>
+											<tr>
+												<td width="20%" align="center">컴포넌트</td>
+											</tr>
+										</table>
+									</div>
+								</div>
+								<input type="button" value="결제하기" id="payment">
+							</div>
+						</div>
 				</div>
 			<%-- </c:if>
 			<c:if test="${sessionScope.type eq 'seller' }">

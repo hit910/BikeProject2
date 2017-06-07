@@ -18,11 +18,10 @@ public class EstimateController {
 	private FrameDAO fdao;
 	
 	@RequestMapping("estimate/estimate.do")
-	public String frame_list(Model model){
+	public String frame_list(Model model, int fno, String fname, int fprice, int fregdate){
 		
 		List<FrameVO> fList = fdao.frameListData();
 		
-		System.out.println(fList);
 		
 		model.addAttribute("fList", fList);
 		//model.addAttribute("fprice",fprice);

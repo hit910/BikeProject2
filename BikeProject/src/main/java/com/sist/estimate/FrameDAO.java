@@ -12,6 +12,9 @@ public class FrameDAO {
 	private EstimateMapper estimateMapper;
 	
 	public List<FrameVO> frameListData(){
+/*		List<FrameVO> list = estimateMapper.frameListData();
+		System.out.println(list.size());
+		return list;*/
 		return estimateMapper.frameListData();
 	}
 	

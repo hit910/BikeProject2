@@ -40,7 +40,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
-	$(function(){
+/* 	$(function(){
 		$(window).scroll(function(){
 			if($(this).scrollTop() > 135){
 				$("#header_div2").css({position:"fixed",top:"0px"});
@@ -48,7 +48,7 @@
 				$("#header_div2").css({position:"relative",top:"0px"});
 			}
 		});
-	});
+	}); */
 	
 	Shadowbox.init({
 		players:["iframe"]
@@ -64,13 +64,7 @@
 				height: 120
 			});
 		});
-	});
-	
-	function logoutsend(){
-		logout.submit();
-	}
-	
-	$(function(){
+		
 		$('#myOrder').click(function(){
 			Shadowbox.open({
 				content: 'myOrder.do',
@@ -80,9 +74,7 @@
 				height: 550
 			});
 		});
-	});
-	
-	$(function(){
+		
 		$('#qnaboard').click(function(){
 			Shadowbox.open({
 				content: 'board.do',
@@ -92,7 +84,30 @@
 				height: 600
 			});
 		});
+		
+		$('#estimate').click(function(){
+			Shadowbox.open({
+				content: 'estimate/estimate.do',
+				player: 'iframe',
+				title: 'estimate sheet',
+				width: 1000,
+				height: 550
+			});
+		});
+/* 		$.ajax({
+			type:"POST",
+			url:"estimate/estimate.do",
+			success:function(response){
+				$('#estimate_prodect_content').html(response);
+			}
+		}); */
+	
 	});
+	
+	function logoutsend(){
+		logout.submit();
+	}
+
 </script>
 </head>
 <body body id="page-top" class="index">
@@ -155,7 +170,7 @@
 							<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 						</a>
 						<div class="dropdown">
-							<a href="#home" id="login">로그인</a>
+							<font id="login">로그인</font>
 							<a href="#joinLink">회원가입</a>
 						</div>
 					</li>
