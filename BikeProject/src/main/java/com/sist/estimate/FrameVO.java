@@ -8,33 +8,36 @@ package com.sist.estimate;
 );
  */
 public class FrameVO {
-	private int fno;
-	private String fname;
-	private int fprice;
-	private int fregdate;
+
+	private int no;
+	private String name;
+	private int price;
+	private String regdate;
 	
 	public int getFno() {
-		return fno;
+		return no;
 	}
 	public void setFno(int fno) {
-		this.fno = fno;
+		this.no = fno;
 	}
 	public String getFname() {
-		return fname;
+		return name;
 	}
 	public void setFname(String fname) {
-		this.fname = fname;
+		this.name = fname;
 	}
 	public int getFprice() {
-		return fprice;
+		return price;
 	}
 	public void setFprice(int fprice) {
-		this.fprice = fprice;
+		this.price = fprice;
 	}
-	public int getFregdate() {
-		return fregdate;
+
+	public String getFregdate() {
+		return regdate;
 	}
-	public void setFregdate(int fregdate) {
-		this.fregdate = fregdate;
+		
+	public void setFregdate(String fregdate) {
+		this.regdate = fregdate;
 	}
 }

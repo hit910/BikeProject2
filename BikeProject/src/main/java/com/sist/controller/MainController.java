@@ -21,9 +21,11 @@ public class MainController {
 		model.addAttribute("bottom_jsp", "bottom.jsp");
 		model.addAttribute("introduce", "../introduce/present.jsp");
 		model.addAttribute("estimate", "../estimate/estimate.jsp");
+		model.addAttribute("addProduct", "../estimate/addProduct.jsp");
 		model.addAttribute("update", "../member/memberUpdateFrom.jsp");
 		model.addAttribute("join", "../member/joinFrom.jsp");
 		model.addAttribute("novice", "../novice/novice.jsp");
+		model.addAttribute("club", "../club/club.jsp");
 		
 		return "main/main";
 	}

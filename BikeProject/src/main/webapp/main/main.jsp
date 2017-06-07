@@ -37,6 +37,7 @@
     <![endif]-->
     <link rel="stylesheet" type="text/css" href="main/main.css">
     <link rel="stylesheet" type="text/css" href="main/custom.css">
+    <link rel="stylesheet" type="text/css" href="estimate/addProduct.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
@@ -85,11 +86,31 @@
 			});
 		});
 		
+		$('#qnaboard').click(function(){
+			Shadowbox.open({
+				content: 'board.do',
+				player: 'iframe',
+				title: 'Q&A',
+				width: 800,
+				height: 600
+			});
+		});
+		
 		$('#estimate').click(function(){
 			Shadowbox.open({
 				content: 'estimate/estimate.do',
 				player: 'iframe',
 				title: 'estimate sheet',
+				width: 1000,
+				height: 550
+			});
+		});
+		
+		$('#addProduct').click(function(){
+			Shadowbox.open({
+				content: 'addproduct.do',
+				player: 'iframe',
+				title: 'ADD PRODUCT',
 				width: 1000,
 				height: 550
 			});
@@ -155,7 +176,7 @@
 						<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
 						
 						<div class="dropdown">
-							<a href="#">상품 등록</a>
+							<a href="#" id="addProduct">상품 등록</a>
 							<a href="#">견적 질문</a>
 						</div>
 					</li>
@@ -163,7 +184,7 @@
 				</c:if>
 				
 				<li id="qnaboard"><a href="#home">묻고 답하기</a></li>
-				<li class="page-scroll"><a href="#">동호회</a></li>
+				<li class="page-scroll"><a href="#clubLink">동호회</a></li>
 				<li class="page-scroll"><a href="#noviceLink">초보 공간</a></li>
 				<c:if test="${sessionScope.id==null }">
 					<li id="loginMenu"><a href="#home">로그인
@@ -195,8 +216,21 @@
 		</div>
 		<jsp:include page="${home_jsp }"></jsp:include>
 		<jsp:include page="${introduce }"></jsp:include>
-		<jsp:include page="${estimate }"></jsp:include>
+		
+		<c:if test="${sessionScope.id!=null }">
+			<c:if test="${sessionScope.type eq 'customer' }">
+				<jsp:include page="${estimate }"></jsp:include>
+			</c:if>
+			<c:if test="${sessionScope.type eq 'seller' }">
+				<jsp:include page="${addProduct }"></jsp:include>
+			</c:if>
+		</c:if>
+		
+		<c:if test="${sessionScope.id==null }">
+			<jsp:include page="${estimate }"></jsp:include>
+		</c:if>
 		<jsp:include page="${qnaboard }"></jsp:include>
+		<jsp:include page="${club }"></jsp:include>
 		<jsp:include page="${novice }"></jsp:include>
 		<c:if test="${sessionScope.id!=null }">
 			<jsp:include page="${update }"></jsp:include>

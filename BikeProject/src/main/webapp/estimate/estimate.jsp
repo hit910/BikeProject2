@@ -69,12 +69,10 @@
 					</table>
 					<div id="scrollList">
 						<table id="estimate_prodect_content" border="0" cellspacing="1" cellpadding="0" width="100%">
-							<c:forEach var="vo" items="${fList }">
 								<tr>
-									<td width="50%" align="center">${vo.fname }</td>
-									<td width="50%" align="center">${vo.fprice }</td>
+									<td width="50%" align="center">${fname }</td>
+									<td width="50%" align="center">${fprice }</td>
 								</tr>
-							</c:forEach>
 						</table>
 									</div>
 								</div>
