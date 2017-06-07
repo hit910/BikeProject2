@@ -18,17 +18,11 @@ public class EstimateController {
 	private FrameDAO fdao;
 	
 	@RequestMapping("estimate/estimate.do")
-	public String frame_list(Model model, int fno, String fname, int fprice, int fregdate){
+	public String frame_list(Model model){
 		
 		List<FrameVO> fList = fdao.frameListData();
 		
-		
 		model.addAttribute("fList", fList);
-		model.addAttribute("fno", fno);
-		model.addAttribute("fname", fname);
-		model.addAttribute("fprice", fprice);
-		model.addAttribute("fregdate", fregdate);
-		//model.addAttribute("fprice",fprice);
 		
 		return "estimate/estimate";
 	}
@@ -44,6 +38,11 @@ public class EstimateController {
 		
 		return "estimate/myOrder";
 	}
+	
+	@RequestMapping("pogba.do")
+	   public String pogba(String url) {
+	      return "estimate/addProduct";
+	   }
 	
 	@RequestMapping("addproduct.do")
 	public String addProduct(String combo, String name, String price, String year) {

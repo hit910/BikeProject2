@@ -282,13 +282,13 @@ stylize any heading tags withing white-panel below
 
 	</div>
 
-	<hr>
+<!-- 	<hr>
 	<h2>진행중인 이벤트</h2>
 	<a href="http://bike-korea.com/page_xRmq23"><img src="club/img/ing.JPG"></a>
 	<hr>
 	<h2>지난 이벤트</h2>
 	<a href="http://bike-korea.com/page_xRmq23"><img src="club/img/before.JPG"></a>
-	<a href="http://bike-korea.com/page_xRmq23">진행중인 이벤트 자세히 보기</a>
+	<a href="http://bike-korea.com/page_xRmq23">진행중인 이벤트 자세히 보기</a> -->
 </section>
 <script>
 	$(function() {
