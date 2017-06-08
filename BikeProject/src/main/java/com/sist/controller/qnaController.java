@@ -27,10 +27,10 @@ public class qnaController {
 	@Autowired
 	private QnaDAO dao;
 	
-	@RequestMapping("board.do")
+	/*@RequestMapping("board.do")
 	public String qnaboard(String url){
 		return "qnaboard/qnaboard";
-	}
+	}*/
 	
 	@RequestMapping("qnaboard/qnaboard.do")
 	public String databoard_list(String page,Model model){

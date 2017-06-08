@@ -12,26 +12,16 @@
 <link rel="stylesheet" type="text/css" href="table.css">
 <script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <script type="text/javascript">
-/* 	$(function(){
-		$.ajax({
-		   type:"POST",
-		   url:"qnaboard/qnaboard.do",
-		   success:function(response){
-		      $("#qna_table_content").html(response);
-		   }
-		});
-	});  */
 </script>
 </head>
 <body>
 	<section id="qnaboard">
 	<center>
-		<h3>자료실</h3>
+		<!-- <h3>Q&A 게시판</h3> -->
 		<table border="0" width="700">
 			<tr>
 				<td align="left">
-				<a href="insert.do">
-				글쓰기</a>
+				<a id="write" href="../insert.do">글쓰기</a>
 				</td>
 			</tr>
 		</table>
@@ -62,9 +52,9 @@
 		</table>
 		<table border="0" width="700">
 			<tr>
-				<td align="right">
-					<a href="../qnaboard/qnaboard.do?page=${curpage>1 ? curpage-1:curpage }">이전</a>&nbsp;
-					<a href="../qnaboard/qnaboard.do?page=${curpage<totalpage ? curpage+1:curpage }">다음</a>&nbsp;&nbsp;
+				<td align="right" style="color: white;">
+					<a href="qnaboard.do?page=${curpage>1 ? curpage-1:curpage }">이전</a>&nbsp;
+					<a href="qnaboard.do?page=${curpage<totalpage ? curpage+1:curpage }">다음</a>&nbsp;&nbsp;
 					${curpage } page / ${totalpage } pages
 				</td>
 			</tr>

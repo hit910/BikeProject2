@@ -5,7 +5,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="table.css">
+<link rel="stylesheet" type="text/css" href="qnaboard/table.css">
 </head>
 <body>
 	<center>

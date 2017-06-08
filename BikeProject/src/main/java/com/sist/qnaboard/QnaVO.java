@@ -7,20 +7,15 @@ import org.springframework.web.multipart.MultipartFile;
 public class QnaVO {
 	private int no;
 	private String name;
-	private String email;
 	private String subject;
 	private String content;
 	private String pwd;
-	private int hit;
 	private Date regdate;
-	private int group_id;
-	private int group_step;
-	private int group_tab;
-	private int root;
-	private int depth;
+	private int hit;
 	private String filename;
 	private String filesize;
 	private int filecount;
+	
 	private List<MultipartFile> files=
 			new ArrayList<MultipartFile>();
 	private List<String> nameList=
@@ -40,12 +35,6 @@ public class QnaVO {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getEmail() {
-		return email;
-	}
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	public String getSubject() {
 		return subject;
 	}
@@ -64,47 +53,17 @@ public class QnaVO {
 	public void setPwd(String pwd) {
 		this.pwd = pwd;
 	}
-	public int getHit() {
-		return hit;
-	}
-	public void setHit(int hit) {
-		this.hit = hit;
-	}
 	public Date getRegdate() {
 		return regdate;
 	}
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-	public int getGroup_id() {
-		return group_id;
+	public int getHit() {
+		return hit;
 	}
-	public void setGroup_id(int group_id) {
-		this.group_id = group_id;
-	}
-	public int getGroup_step() {
-		return group_step;
-	}
-	public void setGroup_step(int group_step) {
-		this.group_step = group_step;
-	}
-	public int getGroup_tab() {
-		return group_tab;
-	}
-	public void setGroup_tab(int group_tab) {
-		this.group_tab = group_tab;
-	}
-	public int getRoot() {
-		return root;
-	}
-	public void setRoot(int root) {
-		this.root = root;
-	}
-	public int getDepth() {
-		return depth;
-	}
-	public void setDepth(int depth) {
-		this.depth = depth;
+	public void setHit(int hit) {
+		this.hit = hit;
 	}
 	public String getFilename() {
 		return filename;
@@ -148,5 +107,6 @@ public class QnaVO {
 	public void setDbday(String dbday) {
 		this.dbday = dbday;
 	}
+	
 }
 	

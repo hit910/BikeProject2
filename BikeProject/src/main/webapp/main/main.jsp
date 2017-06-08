@@ -77,11 +77,11 @@
       
       $('#qnaboard').click(function(){
          Shadowbox.open({
-            content: 'board.do',
+            content: 'qnaboard/qnaboard.do',
             player: 'iframe',
             title: 'Q&A',
             width: 800,
-            height: 600
+            height: 450
          });
       });
       

@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<link rel="stylesheet" type="text/css" href="table.css">
+<link rel="stylesheet" type="text/css" href="qnaboard/table.css">
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 var fileIndex=0;
@@ -106,7 +106,7 @@ function send(){
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="button" value="글쓰기" onclick="send()">
+						<input type="button" value="수정" onclick="send()">
 						<input type="button" value="취소" onclick="javascript:history.back()">
 					</td>
 				</tr>																			
