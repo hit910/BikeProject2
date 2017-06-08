@@ -1,9 +1,7 @@
 package com.sist.controller;
 
 import java.util.List;
-import java.util.Map;
 
-import org.apache.commons.collections.map.HashedMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,13 +16,64 @@ public class EstimateController {
 	private FrameDAO fdao;
 	
 	@RequestMapping("estimate/estimate.do")
-	public String frame_list(Model model){
+	public String estimate_list(Model model){
 		
 		List<FrameVO> fList = fdao.frameListData();
 		
 		model.addAttribute("fList", fList);
 		
+		model.addAttribute("myEstimate", "myEstimate.jsp");
+		model.addAttribute("proEstimate", "frameEstimate.jsp");
+		
 		return "estimate/estimate";
+	}
+	
+	@RequestMapping("estimate/frame.do")
+	public String frame_list(Model model){
+		
+List<FrameVO> fList = fdao.frameListData();
+		
+		model.addAttribute("fList", fList);
+
+		model.addAttribute("frameEstimate", "frameEstimate.jsp");
+		
+		return "estimate/frameEstimate";
+	}
+	
+	@RequestMapping("estimate/group.do")
+	public String group_list(Model model){
+		
+		List<FrameVO> gList = fdao.groupListData();
+		
+		model.addAttribute("gList", gList);
+
+		model.addAttribute("groupEstimate", "groupEstimate.jsp");
+		
+		return "estimate/groupEstimate";
+	}
+	
+	@RequestMapping("estimate/wheel.do")
+	public String wheel_list(Model model){
+		
+		List<FrameVO> wList = fdao.wheelListData();
+		
+		model.addAttribute("wList", wList);
+
+		model.addAttribute("wheelEstimate", "wheelEstimate.jsp");
+		
+		return "estimate/wheelEstimate";
+	}
+	
+	@RequestMapping("estimate/comp.do")
+	public String comp_list(Model model){
+		
+		List<FrameVO> cList = fdao.compListData();
+		
+		model.addAttribute("cList", cList);
+
+		model.addAttribute("compEstimate", "compEstimate.jsp");
+		
+		return "estimate/compEstimate";
 	}
 	
 	@RequestMapping("purchase.do")

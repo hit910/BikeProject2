@@ -10,6 +10,15 @@ public interface EstimateMapper {
 	@Select("SELECT p_no,p_name,p_price,p_regdate FROM product_frame")
 	public List<FrameVO> frameListData();
 	
+	@Select("SELECT p_no,p_name,p_price,p_regdate FROM product_groupset")
+	public List<FrameVO> groupListData();
+	
+	@Select("SELECT p_no,p_name,p_price,p_regdate FROM product_wheelset")
+	public List<FrameVO> wheelListData();
+	
+	@Select("SELECT p_no,p_name,p_price,p_regdate FROM product_comp")
+	public List<FrameVO> compListData();
+	
 	@Insert("INSERT INTO product_frame " +
 		"VALUES ((SELECT max(p_no) FROM product_frame)+1, #{name}, #{price}, #{regdate})")
 	public void insertFrame(FrameVO vo);

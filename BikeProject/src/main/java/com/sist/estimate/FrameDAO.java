@@ -13,10 +13,28 @@ public class FrameDAO {
    
    public List<FrameVO> frameListData(){
       List<FrameVO> list = estimateMapper.frameListData();
-      System.out.println(list.get(1).getP_name());
+      //System.out.println(list.get(1).getP_name());
       return list;
       //return estimateMapper.frameListData();
    }
+   public List<FrameVO> groupListData(){
+	      List<FrameVO> list = estimateMapper.groupListData();
+	      //System.out.println(list.get(1).getP_name());
+	      return list;
+	      //return estimateMapper.frameListData();
+	   }
+   public List<FrameVO> wheelListData(){
+	      List<FrameVO> list = estimateMapper.wheelListData();
+	      //System.out.println(list.get(1).getP_name());
+	      return list;
+	      //return estimateMapper.frameListData();
+	   }
+   public List<FrameVO> compListData(){
+	      List<FrameVO> list = estimateMapper.compListData();
+	      //System.out.println(list.get(1).getP_name());
+	      return list;
+	      //return estimateMapper.frameListData();
+	   }
    
    public void insertProduct(String combo, String name, String price, String year) {
       FrameVO vo = new FrameVO();
