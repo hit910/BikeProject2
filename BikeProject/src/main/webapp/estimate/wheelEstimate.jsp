@@ -14,12 +14,12 @@ $(function(){
 		var no = $(this).attr('value');
 		//var type = $('#type').text();
 		var name = $('#wn'+no).text();
-		var count = $('#wc'+no).attr('value');
+		//var count = $('#wc'+no).attr('value');
 		var price = $('#wp'+no).text();
 		
 		//$('#myType').text(type);
 		$('#mywName').text(name);
-		$('#mywCount').text(count);
+		$('#mywCount').text(1);
 		$('#mywPrice').text(price);
 		$('#mywCancel').text('X');
 	});
@@ -48,9 +48,9 @@ $(function(){
                            <table id="itemsTable">
                   <tr>
                   	 <th width="30%" align="center">종류</th>
-                     <th width="30%" align="center">이름</th>
+                     <th width="40%" align="center">이름</th>
                      <th width="30%" align="center">가격</th>
-                      <th width="10%" align="center">수량</th>
+                      <!-- <th width="10%" align="center">수량</th> -->
                   </tr>
                </table>
                <div id="scrollList">
@@ -58,9 +58,9 @@ $(function(){
                         <c:forEach var="vo" items="${wList }">   
                                  <tr class="wheelTr" value="${vo.p_no }">
                                  	<td width="30%" align="center">휠셋</td>
-                                    <td width="30%" align="center" id="wn${vo.p_no }">${vo.p_name}</td>
+                                    <td width="40%" align="center" id="wn${vo.p_no }">${vo.p_name}</td>
                                     <td width="30%" align="center" id="wp${vo.p_no }">${vo.p_price}</td>
-                                 	<td width="10%" align="center"><input id="wc${vo.p_no }" type="text" value="1" size="1"></td>
+                                 	<%-- <td width="10%" align="center"><input id="wc${vo.p_no }" type="text" value="1" size="1"></td> --%>
                                  </tr>
                               </c:forEach>
                   </table>

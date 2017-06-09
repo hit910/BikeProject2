@@ -51,7 +51,7 @@
 				   }
 			});
 		});
-		
+ 		
 	});
 </script>
 </head>
@@ -79,7 +79,9 @@
                                  <tr>
                                     <td width="20%" align="center" id="myFrame">프레임</td>
                                     <td width="40%" align="center" id="myfName">선택안함</td>
-                                    <td width="10%" align="center" id="myfCount">0</td>
+                                    <td width="10%" align="center" >
+                                    	<input id="myfCount" type="text" value="0" size="1"><font id="increase">U</font><font>D</font>
+                                    </td>
                                     <td width="20%" align="center" id="myfPrice">0</td>
                                     <td width="10%" align="center" id="myfCancel"></td>
                                  </tr>
@@ -104,10 +106,23 @@
                                     <td width="20%" align="center" id="mycPrice">0</td>
                                     <td width="10%" align="center" id="mycCancel"></td>
                                  </tr>
+                                 <tr></tr>
+                                 <tr></tr>
+                                 <tr></tr>
+                                 <tr></tr>
+                                 <tr>
+                                 	<td colspan="2" width="20%" align="center">
+                                 		<font style="font-weight: bold;">총 금액</font></td>
+                                    <td colspan="3" width="40%" align="center">
+                                    	<font id="totalPrice" style="font-weight: bold; color: red;">0</font></td>
+                                 </tr>
+                              </table>
+                              <table>
+                              	
                               </table>
                            </div>
                         </div>
-                        <input type="button" value="결제하기" id="payBtn">
+                        <input class="payBtn" type="button" value="결제하기" style="margin: 10px;">
                      </div>
                   </div>
    </center>

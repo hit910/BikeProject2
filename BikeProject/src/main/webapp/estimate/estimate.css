@@ -29,15 +29,15 @@
 
 #estimate_product {
 	width: 500px;
-	height: 550px;
+	height: 500px;
 	background-color: white;
 	float: left;
 }
 
 #estimate_prodect_list {
 	width: 480px;
-	height: 5500x;
-	background-color: red;
+	height: 500x;
+	/* background-color: red; */
 	/* overflow: auto; */
 }
 
@@ -57,7 +57,7 @@
 
 #estimate_select {
 	width: 500px;
-	height: 550px;
+	height: 500px;
 	/* margin-top: 20px; */
 	background-color: white;
 	float: right;

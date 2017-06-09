@@ -14,12 +14,12 @@ $(function(){
 		var no = $(this).attr('value');
 		//var type = $('#type').text();
 		var name = $('#fn'+no).text();
-		var count = $('#fc'+no).attr('value');
-		var price = $('#fp'+no).text();
+		var count = Number($('#myfCount').attr('value'));
+		var price = Number($('#fp'+no).text());
 		
 		//$('#myType').text(type);
 		$('#myfName').text(name);
-		$('#myfCount').text(count);
+		$('#myfCount').attr('value',1);
 		$('#myfPrice').text(price);
 		$('#myfCancel').text('X');
 	});
@@ -27,10 +27,17 @@ $(function(){
 	$('#myfCancel').click(function(){
 		//$('#myType').text("");
 		$('#myfName').text("선택안함");
-		$('#myfCount').text("0");
+		$('#myfCount').attr('value',0);
 		$('#myfPrice').text("0");
 		$('#myfCancel').text("");
 	});
+	
+ 		$('#increase').click(function(){
+ 			
+ 			$('#myfCount').attr('value',count+1);
+ 			
+ 			$('#myfPrice').text(price*count);
+ 		});
 });
 </script>
 <link rel="stylesheet" type="text/css" href="../estimate/estimate.css">
@@ -48,9 +55,9 @@ $(function(){
                            <table id="itemsTable">
                   <tr>
                   	 <th width="30%" align="center">종류</th>
-                     <th width="30%" align="center">이름</th>
+                     <th width="40%" align="center">이름</th>
                      <th width="30%" align="center">가격</th>
-                      <th width="10%" align="center">수량</th>
+                      <!-- <th width="10%" align="center">수량</th> -->
                   </tr>
                </table>
                <div id="scrollList">
@@ -58,9 +65,9 @@ $(function(){
                         <c:forEach var="vo" items="${fList }">   
                                  <tr class="frameTr" value="${vo.p_no }">
                                  	<td width="30%" align="center">프레임</td>
-                                    <td width="30%" align="center" id="fn${vo.p_no }">${vo.p_name}</td>
+                                    <td width="40%" align="center" id="fn${vo.p_no }">${vo.p_name}</td>
                                     <td width="30%" align="center" id="fp${vo.p_no }">${vo.p_price}</td>
-                                 	<td width="10%" align="center"><input id="fc${vo.p_no }" type="text" value="1" size="1"></td>
+                                 	<%-- <td width="10%" align="center"><input id="fc${vo.p_no }" type="text" value="1" size="1"></td> --%>
                                  </tr>
                               </c:forEach>
                   </table>

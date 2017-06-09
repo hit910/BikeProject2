@@ -14,12 +14,12 @@ $(function(){
 		var no = $(this).attr('value');
 		//var type = $('#type').text();
 		var name = $('#gn'+no).text();
-		var count = $('#gc'+no).attr('value');
+		//var count = $('#gc'+no).attr('value');
 		var price = $('#gp'+no).text();
 		
 		//$('#myType').text(type);
 		$('#mygName').text(name);
-		$('#mygCount').text(count);
+		$('#mygCount').text(1);
 		$('#mygPrice').text(price);
 		$('#mygCancel').text('X');
 	});
@@ -48,9 +48,9 @@ $(function(){
                            <table id="itemsTable">
                   <tr>
                   	 <th width="30%" align="center">종류</th>
-                     <th width="30%" align="center">이름</th>
+                     <th width="40%" align="center">이름</th>
                      <th width="30%" align="center">가격</th>
-                      <th width="10%" align="center">수량</th>
+                      <!-- <th width="10%" align="center">수량</th> -->
                   </tr>
                </table>
                <div id="scrollList">
@@ -58,9 +58,9 @@ $(function(){
                         <c:forEach var="vo" items="${gList }">   
                                  <tr class="groupTr" value="${vo.p_no }">
                                  	<td width="30%" align="center">구동계</td>
-                                    <td width="30%" align="center" id="gn${vo.p_no }">${vo.p_name}</td>
+                                    <td width="40%" align="center" id="gn${vo.p_no }">${vo.p_name}</td>
                                     <td width="30%" align="center" id="gp${vo.p_no }">${vo.p_price}</td>
-                                 	<td width="10%" align="center"><input id="gc${vo.p_no }" type="text" value="1" size="1"></td>
+                                 	<%-- <td width="10%" align="center"><input id="gc${vo.p_no }" type="text" value="1" size="1"></td> --%>
                                  </tr>
                               </c:forEach>
                   </table>
