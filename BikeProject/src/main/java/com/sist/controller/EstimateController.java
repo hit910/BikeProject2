@@ -89,8 +89,20 @@ List<FrameVO> fList = fdao.frameListData();
 	}
 	
 	@RequestMapping("pogba.do")
-	   public String pogba(String url) {
-	      return "estimate/addProduct";
+	public String pogba(String url, Model model) {
+		
+		List<FrameVO> frame = fdao.frameListData();
+		List<FrameVO> groupset = fdao.groupListData();
+		List<FrameVO> wheelset = fdao.wheelListData();
+		List<FrameVO> comp = fdao.compListData();
+		
+		model.addAttribute("frame", frame);
+		model.addAttribute("groupset", groupset);
+		model.addAttribute("wheelset", wheelset);
+		model.addAttribute("comp", comp);
+		
+		
+		return "estimate/addProduct";
 	   }
 	
 	@RequestMapping("addproduct.do")
