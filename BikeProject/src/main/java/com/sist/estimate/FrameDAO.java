@@ -2,6 +2,7 @@ package com.sist.estimate;
 
 import java.util.*;
 
+import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -41,6 +42,7 @@ public class FrameDAO {
 
 	public void insertProduct(String combo, String name, String price, String year) {
 		FrameVO vo = new FrameVO();
+
 		switch (combo) {
 		case "product_frame":
 			vo.setP_name(name);
@@ -68,4 +70,38 @@ public class FrameDAO {
 			break;
 		}
 	}
+
+	/*public void productDelete(String name, String no) {
+		switch (name) {
+		case "product_frame":
+			estimateMapper.frameDelete(no);
+			break;
+		case "product_groupset":
+			estimateMapper.groupsetDelete(no);
+			break;
+		case "product_wheelset":
+			estimateMapper.wheelsetDelete(no);
+			break;
+		case "product_comp":
+			estimateMapper.compDelete(no);
+			break;
+		}
+	}*/
+
+	public void frameDelete(int no) {
+		estimateMapper.frameDelete(no);
+	}
+
+	public void groupsetDelete(int no) {
+		estimateMapper.groupsetDelete(no);
+	}
+
+	public void wheelsetDelete(int no) {
+		estimateMapper.wheelsetDelete(no);
+	}
+
+	public void compDelete(int no) {
+		estimateMapper.compDelete(no);
+	}
+
 }

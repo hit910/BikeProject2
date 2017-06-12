@@ -12,5 +12,7 @@ public interface LoginMapper {
 	   
 	   @Select("SELECT c_pwd FROM customer WHERE c_id=#{id}")
 	   public String loginGetPassword(String id);
-
+	   
+	   @Select("SELECT * FROM customer WHERE c_id=#{id}")
+	   public MemberVO readMember(String id);
 }

@@ -21,4 +21,8 @@ public class LoginDAO {
 		return login_mapper.loginGetPassword(id);
 	}
 	
+	public MemberVO readMember(String id) {
+		return login_mapper.readMember(id);
+	}
+	
 }
