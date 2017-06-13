@@ -14,12 +14,13 @@ $(function(){
 		var no = $(this).attr('value');
 		//var type = $('#type').text();
 		var name = $('#fn'+no).text();
-		var count = Number($('#myfCount').attr('value'));
-		var price = Number($('#fp'+no).text());
-		
+		var count = parseInt(1);
+		var price = parseInt($('#fp'+no).text());
 		//$('#myType').text(type);
 		$('#myfName').text(name);
-		$('#myfCount').attr('value',1);
+		$('#myfCount').text(count);
+		$('#fcount').val(count);
+		$('#fprice').val(price);
 		$('#myfPrice').text(price);
 		$('#myfCancel').text('X');
 	});
@@ -27,17 +28,30 @@ $(function(){
 	$('#myfCancel').click(function(){
 		//$('#myType').text("");
 		$('#myfName').text("선택안함");
-		$('#myfCount').attr('value',0);
-		$('#myfPrice').text("0");
+		$('#myfCount').text(0);
+		$('#myfPrice').text(0);
 		$('#myfCancel').text("");
 	});
 	
- 		$('#increase').click(function(){
+ 	$('#sum').click(function frameSum(){
+		$('#myfPrice').text(count*price);
+	});
+	
+	$('#inc').click(function(){
+		$.ajax({
+			type: "POST",
+			url: "totalPrice.do",
+			data:$('#frm').serialize(),
+			success:function(data){
+				$('#estimate_select').html(data);
+			},
+			error:function(data){
+				$.jQueryAlert("실패");
+			}
+		});
  			
- 			$('#myfCount').attr('value',count+1);
- 			
- 			$('#myfPrice').text(price*count);
- 		});
+ 	});
+ 	
 });
 </script>
 <link rel="stylesheet" type="text/css" href="../estimate/estimate.css">

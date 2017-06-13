@@ -31,7 +31,7 @@ public class EstimateController {
 	@RequestMapping("estimate/frame.do")
 	public String frame_list(Model model){
 		
-List<FrameVO> fList = fdao.frameListData();
+		List<FrameVO> fList = fdao.frameListData();
 		
 		model.addAttribute("fList", fList);
 
@@ -74,6 +74,19 @@ List<FrameVO> fList = fdao.frameListData();
 		model.addAttribute("compEstimate", "compEstimate.jsp");
 		
 		return "estimate/compEstimate";
+	}
+	
+	@RequestMapping("estimate/totalPrice.do")
+	public String totalPrice(Model model, String myfPrice, String myfCount){
+		System.out.println(myfPrice+", "+myfCount);
+		int count = Integer.parseInt(myfCount)+1;
+		System.out.println(count);
+		int total = Integer.parseInt(myfPrice)*count;
+		System.out.println(total);
+		model.addAttribute("total", total);
+		model.addAttribute("count", count);
+		
+		return "estimate/myEstimate";
 	}
 	
 	@RequestMapping("purchase.do")

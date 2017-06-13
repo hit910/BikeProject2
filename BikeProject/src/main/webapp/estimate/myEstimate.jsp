@@ -50,13 +50,14 @@
 				      $("#estimate_product").html(response);
 				   }
 			});
-		});
+		});	
  		
 	});
 </script>
 </head>
 <body>
    <center>
+   		<form id="frm">
                <div id="estimate_select">
                   <div id="estimate_select_list">
                      <div id="purchaseHeader">
@@ -80,9 +81,16 @@
                                     <td width="20%" align="center" id="myFrame">프레임</td>
                                     <td width="40%" align="center" id="myfName">선택안함</td>
                                     <td width="10%" align="center" >
-                                    	<input id="myfCount" type="text" value="0" size="1"><font id="increase">U</font><font>D</font>
+                                    	<%-- <input id="myfCount" type="number" value="${count }" style="width:40px;"> --%>
+                                    	<span id="myfCount">${count }</span>
+                                    	<input type="button" value="증가" id="inc">
+                                    	<input type="button" value="감소" id="dec">
                                     </td>
-                                    <td width="20%" align="center" id="myfPrice">0</td>
+                                    <td width="20%" align="center" >
+                                    	<input type="hidden" value="" id="fcount" name="myfCount">
+                                    	<input type="hidden" value="" id="fprice" name="myfPrice">
+                                    	<span id="myfPrice" >${total }</span>
+                                    </td>
                                     <td width="10%" align="center" id="myfCancel"></td>
                                  </tr>
                                  <tr>
@@ -125,6 +133,7 @@
                         <input class="payBtn" type="button" value="결제하기" style="margin: 10px;">
                      </div>
                   </div>
+      </form>
    </center>
 </body>
 </html>
