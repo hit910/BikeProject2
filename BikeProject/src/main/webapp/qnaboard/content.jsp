@@ -9,10 +9,10 @@
 <title>Insert title here</title>
 <link rel="stylesheet" type="text/css" href="qnaboard/table.css">
 </head>
-<body>
+<body id="bg_img">
 	<center>
-		<h3>내용보기</h3>
-		<table id="table_content" width="700">
+		<h2>내용보기</h2>
+		<table id="table_content" width="900">
 			<tr>
 				<th width="20%">번호</th>
 				<td width="30%" align="center">${vo.no }</td>
@@ -42,21 +42,19 @@
 			 		</c:forEach>
 			 	</td>
 			 </tr>	
-			</c:if>	
+			</c:if>
+			
 			<tr>
-				<td colspan="4" valign="top" align="left" height="200">
-					<pre>
-					<c:if test="${vo.filecount !=0 }">
-			 			<a href="download.do?fn=${fname }">${fname }</a>&nbsp;
-					</c:if>
-					</pre>
+				<td colspan="4" valign="top" align="left" height="350">
+					<pre>${vo.content }</pre>
 				</td>
-			</tr>
+			</tr>				
 		</table>	
 		
-		<table id="table_content" width="700">
+		<table id="table_content2" width="900">
 			<tr>
 				<td align="right">
+					<a href="reply.do?no=${vo.no }">답글</a>&nbsp;
 					<a href="update.do?no=${vo.no }">수정</a>&nbsp;
 					<a href="delete.do?no=${vo.no }">삭제</a>&nbsp;
 					<a href="qnaboard/qnaboard.do">목록</a>&nbsp;
@@ -64,6 +62,5 @@
 			</tr>
 		</table>
 	</center>
-	
 </body>
 </html>

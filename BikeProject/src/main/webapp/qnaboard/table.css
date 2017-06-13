@@ -1,7 +1,3 @@
-3{
-	color:white;
-}
-
 #table_content{
 	border-collapse: collapse;
 	border-top-width: 2px;
@@ -11,15 +7,18 @@
 	border-top-color: #333;
 	border-bottom-color: #333;
 	background-color: white;
-	
+	border-radius: 12px;
+	border: ridge;
 }
 #table_content th,td{
 	margin: 0px;
 	padding: 8px;
-	font-size: 9pt;
+	font-size: 15pt;
+	
+	
 }
 #table_content th{
-	background-color: #999;
+	background-color: #00ABDF;
 	color: #fff;
 	border-bottom-width: 1px;
 	border-bottom-color: #333;
@@ -60,19 +59,65 @@ input[type="password"] {
     -webkit-border-radius: 12px;
     -moz-border-radius: 12px;
     border-radius: 12px;
-    border: 1px #CCC solid;
+    border: 2px #CCC solid;
 }
-table td #write{
-	font-size: 15px;
-	color: white;
-}
-td #write{
-	font-size: 15px;
-	color: white;
+h2{
+	width:200px;
+	background-color: white;
+	border-radius: 12px;
+	border: 1px #CCC solid;
 }
 h3{
 	color: white;
 }
-
-
-
+table tr td a #write{
+	width: 5%;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+table tr td a img{
+	width:3%;
+	
+}
+#table_content2{
+	border-collapse: collapse;
+	border-top-width: 2px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #333;
+	border-bottom-color: #333;
+	background-color: white;
+	border-radius: 12px;
+}
+#table_content tr td #button_size{
+	font-size: 18px; 
+}
+#table_content tr input{
+	height: 30px;
+	font-size: 20px;
+}
+#table_content tr textarea {
+	font-size: 20px;
+	font-weight: bold;
+}
+#sb-container #sb-wrapper #sb-title{
+	font-size: 20px;
+}
+#table_content3{
+	margin-top:250px;
+	border-collapse: collapse;
+	border-top-width: 3px;
+	border-bottom-width: 3px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #333;
+	border-bottom-color: #333;
+	background-color: white;
+	border-radius: 12px;
+	border: ridge;
+}
+body{
+	background-image: url("image/bg.jpg");
+	background-size: 100%;
+}

@@ -5,8 +5,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
 <title>Insert title here</title>
-<script type="text/javascript"
-		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script>
+<!--광고 <script type="text/javascript"
+		src="http://pagead2.googlesyndication.com/pagead/show_ads.js"></script> -->
 </head>
 <body>
 <section id="noviceLink">

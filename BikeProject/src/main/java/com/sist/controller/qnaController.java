@@ -18,7 +18,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.multipart.MultipartFile;
-
 import com.sist.qnaboard.QnaDAO;
 import com.sist.qnaboard.QnaVO;
 
@@ -26,12 +25,10 @@ import com.sist.qnaboard.QnaVO;
 public class qnaController {
 	@Autowired
 	private QnaDAO dao;
-	
 	/*@RequestMapping("board.do")
 	public String qnaboard(String url){
 		return "qnaboard/qnaboard";
 	}*/
-	
 	@RequestMapping("qnaboard/qnaboard.do")
 	public String databoard_list(String page,Model model){
 		if(page==null)
@@ -215,6 +212,50 @@ public class qnaController {
 		model.addAttribute("no", uploadForm.getNo());
 		model.addAttribute("bCheck", bCheck);
 		return "qnaboard/update_ok";
+	}
+	
+	@RequestMapping("reply.do")
+	public String board_reply(Model model,int no){
+		model.addAttribute("no", no);
+		return "qnaboard/reply";
+	}
+	@RequestMapping("reply_ok.do")
+	public String board_reply_ok(QnaVO vo,int pno, QnaVO uploadForm)
+		throws Exception{
+		
+		QnaVO pvo=dao.boardParentData(pno);
+		dao.boardStepIncrement(pvo);
+		
+		vo.setGroup_id(pvo.getGroup_id());
+		vo.setGroup_step(pvo.getGroup_step()+1);
+		vo.setGroup_tab(pvo.getGroup_tab()+1);
+		vo.setRoot(pno);
+		
+		List<MultipartFile> list=uploadForm.getFiles();
+		String temp="";
+		String temp1="";
+		if(list !=null && list.size()>0){
+			for(MultipartFile mf:list){
+				String fn=mf.getOriginalFilename();
+				String ext=fn.substring(fn.lastIndexOf('.')+1);
+				String save=fn.substring(0, fn.lastIndexOf('.'))
+						+System.currentTimeMillis()+"."+ext;
+				File file=new File("C:\\download\\"+save);
+				mf.transferTo(file);
+				temp+=save+",";
+				temp1+=file.length()+",";
+			}
+			uploadForm.setFilename(temp.substring(0, temp.lastIndexOf(',')));
+			uploadForm.setFilesize(temp1.substring(0, temp1.lastIndexOf(',')));
+			uploadForm.setFilecount(list.size());
+		}else{
+			uploadForm.setFilename("");
+			uploadForm.setFilesize("");
+			uploadForm.setFilecount(0);
+		}
+		dao.boardReplyInsert(vo,uploadForm);
+		dao.boardDepthIncreament(pno);
+		return "redirect:/qnaboard/qnaboard.do";
 	}
 	
 }

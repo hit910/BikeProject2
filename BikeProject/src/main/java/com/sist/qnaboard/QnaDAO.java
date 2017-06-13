@@ -41,9 +41,18 @@ public class QnaDAO {
 	public void databoardUpdate(QnaVO vo){
 		mapper.databoardUpdate(vo);
 	}
-	
-	
-	
+	public QnaVO boardParentData(int no){
+		return mapper.boardParentData(no);
+	}
+	public void boardStepIncrement(QnaVO vo){
+		mapper.boardStepIncrement(vo);
+	}
+	public void boardReplyInsert(QnaVO vo,QnaVO uploadForm){
+		mapper.boardReplyInsert(vo);
+	}
+	public void boardDepthIncreament(int no){
+		mapper.boardDepthIncreament(no);
+	}
 }
 
 
