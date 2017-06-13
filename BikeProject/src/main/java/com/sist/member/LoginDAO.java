@@ -25,4 +25,16 @@ public class LoginDAO {
 		return login_mapper.readMember(id);
 	}
 	
+	public void memberUpdate( String name, String pwd, String phone, String email, String addr) {
+		MemberVO vo = new MemberVO();
+		//vo.setC_id(id);
+		vo.setC_name(name);
+		vo.setC_pwd(pwd);
+		vo.setC_phon(phone);
+		vo.setC_email(email);
+		vo.setC_addr(addr);
+		
+		
+		login_mapper.memberUpdate(vo);
+	}
 }

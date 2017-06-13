@@ -71,8 +71,43 @@ public class FrameDAO {
 		}
 	}
 
-	/*public void productDelete(String name, String no) {
-		switch (name) {
+	public void productUpdate(String tname, int no, String name, String price, String year) {
+		FrameVO vo = new FrameVO();
+
+		switch (tname) {
+		case "product_frame":
+			vo.setP_no(no);
+			vo.setP_name(name);
+			vo.setP_price(price);
+			vo.setP_regdate(year);
+			estimateMapper.frameUpdate(vo);
+			break;
+		case "product_groupset":
+			vo.setP_no(no);
+			vo.setP_name(name);
+			vo.setP_price(price);
+			vo.setP_regdate(year);
+			estimateMapper.groupsetUpdate(vo);
+			break;
+		case "product_wheelset":
+			vo.setP_no(no);
+			vo.setP_name(name);
+			vo.setP_price(price);
+			vo.setP_regdate(year);
+			estimateMapper.wheelsetUpdate(vo);
+			break;
+		case "product_comp":
+			vo.setP_no(no);
+			vo.setP_name(name);
+			vo.setP_price(price);
+			vo.setP_regdate(year);
+			estimateMapper.compUpdate(vo);
+			break;
+		}
+	}
+
+	public void productDelete(String tname, int no) {
+		switch (tname) {
 		case "product_frame":
 			estimateMapper.frameDelete(no);
 			break;
@@ -86,22 +121,5 @@ public class FrameDAO {
 			estimateMapper.compDelete(no);
 			break;
 		}
-	}*/
-
-	public void frameDelete(int no) {
-		estimateMapper.frameDelete(no);
 	}
-
-	public void groupsetDelete(int no) {
-		estimateMapper.groupsetDelete(no);
-	}
-
-	public void wheelsetDelete(int no) {
-		estimateMapper.wheelsetDelete(no);
-	}
-
-	public void compDelete(int no) {
-		estimateMapper.compDelete(no);
-	}
-
 }
