@@ -1,4 +1,134 @@
 @CHARSET "EUC-KR";
+
+body {
+	font-family: ¸¼Àº °íµñ;
+}
+
+.css3-tab {
+	list-style: none;
+	margin: 0 auto 40px;
+	padding: 38px 0 0 0;
+	position: relative;
+	width: 90%;
+}
+
+.css3-tab input[type='radio'] {
+	display: none;
+}
+
+.css3-tab .css3-tab-nav {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+}
+
+.css3-tab .css3-tab-nav label {
+	display: table-cell;
+	background-color: #666666;
+	color: #FFFFFF;
+	padding: 15px;
+	text-align: center;
+	transition: all .3s ease 0s;
+}
+
+.css3-tab .css3-tab-nav label:hover {
+	cursor: pointer;
+	background: white;
+	color: #666666;
+	transition: all .3s ease 0s;
+}
+
+@media ( max-width : 692px) {
+	.css3-tab .css3-tab-nav {
+		display: block;
+		margin: 0 0 20px;
+	}
+	.css3-tab .css3-tab-nav label {
+		display: block;
+		box-sizing: border-box;
+		width: 100%;
+		padding: 20px;
+	}
+}
+
+.css3-tab .css3-tab-content {
+	overflow: hidden;
+	padding: 25px;
+	display: none;
+	background: #FFF;
+	clear: left;
+	box-sizing: border-box;
+}
+
+.css3-tab input[id='tabFrame']:checked ~ .css3-tab-nav label[for='tabFrame']
+	{
+	background: #ff0000;
+	color: #666666;
+	cursor: default;
+}
+
+.css3-tab input[id='tabFrame']:checked ~ div.tab-one {
+	display: block;
+	border-top: solid 3px #ff0000;
+}
+
+.css3-tab input[id='tabGroupset']:checked ~ .css3-tab-nav label[for='tabGroupset']
+	{
+	background: #ff8000;
+	color: white;
+	cursor: default;
+}
+
+.css3-tab input[id='tabGroupset']:checked ~ div.tab-two {
+	display: block;
+	border-top: solid 3px #ff8000;
+}
+
+.css3-tab input[id='tabWheelset']:checked ~ .css3-tab-nav label[for='tabWheelset']
+	{
+	background: #ffff00;
+	color: white;
+	cursor: default;
+}
+
+.css3-tab input[id='tabWheelset']:checked ~ div.tab-three {
+	display: block;
+	border-top: solid 3px #ffff00;
+}
+
+.css3-tab input[id='tabCompressor']:checked ~ .css3-tab-nav label[for='tabCompressor']
+	{
+	background: #00ff40;
+	color: white;
+	cursor: default;
+}
+
+.css3-tab input[id='tabCompressor']:checked ~ div.add-new {
+	display: block;
+	border-top: solid 3px #00ff40;
+}
+
+. tabTable {
+	width: 100%
+}
+
+.showNo {
+	width: 10%;
+}
+.showName {
+	width: 40%;
+}
+.showPrice {
+	width: 20%;
+}
+.showDate {
+	width: 10%;
+}
+.showbtn {
+	width: 20%;
+}
+
+
 #root {
 	width: 100%;
 	height: 790px;
@@ -17,24 +147,25 @@
 }
 
 #content {
-	width: 470px;
-	height: 550px;
-	
+	width: 90%;
+	height: 250px;
 }
 
 #product {
-	width: 470px;
-	height: 300px;
+	width: 95%;
+	height: 200px;
 	background-color: white;
-	font-family: ¸¼Àº °íµñ;
 	font-size: 20px;
 	align: left;
 	padding: 15px;
 }
 
 #button {
-	width: 470px;
-	height: 150px;
+	width: 95%;
+	height: 40px;
+	text-align: center;
+	align: center;
+	valign: middle;
 	background-color: white;
 	padding: 15px;
 }

@@ -2,6 +2,8 @@ package com.sist.controller;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -102,18 +104,65 @@ public class EstimateController {
 	}
 	
 	@RequestMapping("pogba.do")
-	   public String pogba(String url) {
-	      return "estimate/addProduct";
+	public String pogba(String url, Model model) {
+		
+		List<FrameVO> frame = fdao.frameListData();
+		List<FrameVO> groupset = fdao.groupListData();
+		List<FrameVO> wheelset = fdao.wheelListData();
+		List<FrameVO> comp = fdao.compListData();
+		
+		model.addAttribute("frame", frame);
+		model.addAttribute("groupset", groupset);
+		model.addAttribute("wheelset", wheelset);
+		model.addAttribute("comp", comp);
+		
+		model.addAttribute("fsize", frame.size());
+		model.addAttribute("gsize", groupset.size());
+		model.addAttribute("wsize", wheelset.size());
+		model.addAttribute("csize", comp.size());
+		
+		
+		return "estimate/addProduct";
 	   }
 	
 	@RequestMapping("addproduct.do")
 	public String addProduct(String combo, String name, String price, String year) {
-		System.out.println(combo);
-		System.out.println(name);
-		System.out.println(price);
-		System.out.println(year);
-		
 		fdao.insertProduct(combo, name, price, year);
 		return "estimate/addProduct_ok";
+	}
+/*	
+	@RequestMapping("productDelete.do")
+	public void productDelete(String tname, String no) {
+		System.out.println(tname);
+		System.out.println(no);
+		fdao.productDelete(tname, no);
+	}*/
+	
+	@RequestMapping("frameDelete.do")
+	public String frameDelete(HttpServletRequest request) {
+		int num = Integer.parseInt(request.getParameter("no"));
+		fdao.frameDelete(num);
+		return "estimate/deleteProduct_ok";
+	}
+	
+	@RequestMapping("groupsetDelete.do")
+	public String groupsetDelete(HttpServletRequest request) {
+		int num = Integer.parseInt(request.getParameter("no"));
+		fdao.groupsetDelete(num);
+		return "estimate/deleteProduct_ok";
+	}
+
+	@RequestMapping("wheelsetDelete.do")
+	public String wheelsetDelete(HttpServletRequest request) {
+		int num = Integer.parseInt(request.getParameter("no"));
+		fdao.wheelsetDelete(num);
+		return "estimate/addProduct_ok";
+	}
+
+	@RequestMapping("compDelete.do")
+	public String compDelete(HttpServletRequest request) {
+		int num = Integer.parseInt(request.getParameter("no"));
+		fdao.compDelete(num);
+		return "estimate/deleteProduct_ok";
 	}
 }

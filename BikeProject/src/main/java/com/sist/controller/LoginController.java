@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.sist.member.LoginDAO;
+import com.sist.member.MemberVO;
 
 @Controller
 public class LoginController {
@@ -33,6 +34,10 @@ public class LoginController {
 	         if(db_pwd.equals(pwd)){
 	            res="ok";
 	            session.setAttribute("id", id);
+	            
+	            MemberVO vo = dao.readMember(id);
+	            session.setAttribute("vo", vo);
+	            
 	            session.setAttribute("type", type);
 	         } else {
 	        	 res = "pwd";

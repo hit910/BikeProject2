@@ -71,7 +71,7 @@
 	                        <div class="row control-group">
 	                            <div class="form-group col-xs-12 floating-label-form-group controls">
 	                                <label for="name">Name</label>
-	                                <input type="text" class="form-control" placeholder="이름" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false">
+	                                <input type="text" class="form-control" placeholder="이름" id="name" required="" data-validation-required-message="Please enter your name." aria-invalid="false" value="${vo.c_name }">
 	                                <p class="help-block text-danger"></p>
 	                            </div>
 	                        </div>               
