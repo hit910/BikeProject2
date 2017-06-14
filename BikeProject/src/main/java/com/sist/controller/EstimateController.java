@@ -134,8 +134,57 @@ public class EstimateController {
 		return "estimate/estiTotal";
 	}
 	
-	@RequestMapping("purchase.do")
-	public String purchase(String url){
+	@RequestMapping("estimate/purchase.do")
+	public String purchase(String url, HttpServletRequest request, Model model, String myfPrice, String myfCount, String mygPrice, String mygCount,
+			String mywPrice, String mywCount, String mycPrice, String mycCount){
+		
+		int fTotal = Integer.parseInt(myfPrice)*Integer.parseInt(myfCount);
+		int gTotal = Integer.parseInt(mygPrice)*Integer.parseInt(mygCount);
+		int wTotal = Integer.parseInt(mywPrice)*Integer.parseInt(mywCount);
+		int cTotal = Integer.parseInt(mycPrice)*Integer.parseInt(mycCount);
+		int total = fTotal+gTotal+wTotal+cTotal;
+
+		String fType = request.getParameter("fType");
+		String fName = request.getParameter("fName");
+		String fCount = request.getParameter("myfCount");
+		String fResult = request.getParameter("myfPrice");
+		
+		String gType = request.getParameter("gType");
+		String gName = request.getParameter("gName");
+		String gCount = request.getParameter("mygCount");
+		String gResult = request.getParameter("mygPrice");
+		
+		String wType = request.getParameter("wType");
+		String wName = request.getParameter("wName");
+		String wCount = request.getParameter("mywCount");
+		String wResult = request.getParameter("mywPrice");
+		
+		String cType = request.getParameter("cType");
+		String cName = request.getParameter("cName");
+		String cCount = request.getParameter("mycCount");
+		String cResult = request.getParameter("mycPrice");
+		
+		model.addAttribute("total", total);
+		
+		model.addAttribute("fType", fType);
+		model.addAttribute("fName", fName);
+		model.addAttribute("fCount", fCount);
+		model.addAttribute("fResult", fResult);
+		
+		model.addAttribute("gType", gType);
+		model.addAttribute("gName", gName);
+		model.addAttribute("gCount", gCount);
+		model.addAttribute("gResult", gResult);
+		
+		model.addAttribute("wType", wType);
+		model.addAttribute("wName", wName);
+		model.addAttribute("wCount", wCount);
+		model.addAttribute("wResult", wResult);
+		
+		model.addAttribute("cType", cType);
+		model.addAttribute("cName", cName);
+		model.addAttribute("cCount", cCount);
+		model.addAttribute("cResult", cResult);
 		
 		return "estimate/purchase";
 	}
@@ -193,6 +242,21 @@ public class EstimateController {
 		String tname = request.getParameter("tname");
 		int no = Integer.parseInt(request.getParameter("no"));
 		fdao.productDelete(tname, no);
+	}
+	
+	@RequestMapping("estimate/testMain.do")
+	public String testMain(Model model, String pfname, String pgname, String pwname, String pcname,
+							String pfType, String pgType, String pwType, String pcType, String pmoney, String pid){
+		System.out.println(pid);
+		fdao.findMoney(pfname, pgname, pwname, pcname, pfType, pgType, pwType, pcType, pmoney, pid);
+
+		return "estimate/testMain";
+	}
+	
+	//구매 정보 조회
+	@RequestMapping("addOrder.do")
+	public void addOrder(){
+		//
 	}
 	
 }

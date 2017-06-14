@@ -19,6 +19,7 @@ $(function(){
 		
 		//$('#myType').text(type);
 		$('#mygName').text(name);
+		$('#gName').attr('value',name);
 		$('#mygCount').attr('selected',0);
 		$('#gResult').text(price);
 		$('#gcount').val(count);

@@ -67,7 +67,7 @@
 							<font style="font-weight: bold;">총 결제 금액</font>
 						</div>
 						<div id="resultTotalRight">
-							<font style="color: red; font-weight: bold;">6000000 원</font>
+							<font style="color: red; font-weight: bold;">${money }</font>
 						</div>
 					</div>
 					<div id="resultContent">

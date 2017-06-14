@@ -17,6 +17,6 @@ public interface LoginMapper {
 	   @Select("SELECT * FROM customer WHERE c_id=#{id}")
 	   public MemberVO readMember(String id);
 	   
-	   @Update("UPDATE customer SET c_name=#{c_name},c_pwd=#{c_pwd),c_phon=#{c_phon}, c_email=#{c_email},c_addr=#{c_addr} WHERE c_id=#{c_id}")
-	   public void memberUpdate(MemberVO vo);
+	  /* @Update("UPDATE customer SET c_name=#{c_name},c_pwd=#{c_pwd),c_phon=#{c_phon}, c_email=#{c_email},c_addr=#{c_addr} WHERE c_id=#{c_id}")
+	   public void memberUpdate(MemberVO vo);*/
 }

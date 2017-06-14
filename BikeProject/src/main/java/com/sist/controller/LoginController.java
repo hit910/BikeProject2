@@ -52,13 +52,13 @@ public class LoginController {
 		return "member/logout_ok";
 	}
 
-	@RequestMapping("memberUpdate.do")
+	/*@RequestMapping("memberUpdate.do")
 	public String memberUpdate(String id, String name, String pwd, String phone, String email, String addr) {
 		
 		dao.memberUpdate( name, pwd, phone, email, addr);
 		
 		
 		return "member/momberUpdateForm_ok";
-	}
+	}*/
 
 }

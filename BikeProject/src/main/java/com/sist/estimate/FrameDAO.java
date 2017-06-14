@@ -1,8 +1,7 @@
 package com.sist.estimate;
 
-import java.util.*;
+import java.util.List;
 
-import org.apache.ibatis.annotations.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -121,5 +120,20 @@ public class FrameDAO {
 			estimateMapper.compDelete(no);
 			break;
 		}
+	}
+	
+	public void findMoney(String pfname, String pgname, String pwname, String pcname,
+			String pfType, String pgType, String pwType, String pcType, String pmoney, String id){
+		System.out.println(id);
+		
+		OrderVO ovo = new OrderVO();
+		ovo.setC_id(id);
+		ovo.setP_frame(pfname);
+		ovo.setP_groupset(pgname);
+		ovo.setP_wheel(pwname);
+		ovo.setP_comp(pcname);
+		ovo.setO_price(Integer.parseInt(pmoney));
+		System.out.println(ovo.getC_id());
+		estimateMapper.findMoney(ovo);
 	}
 }

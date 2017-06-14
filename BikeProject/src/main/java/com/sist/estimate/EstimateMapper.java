@@ -64,5 +64,9 @@ public interface EstimateMapper {
 	@Delete("DELETE FROM product_comp WHERE p_no = #{no}")
 	public void compDelete(int no);
 	
+	@Insert("INSERT INTO order_info (o_no, c_id, p_frame, p_groupset, p_wheel, p_comp, o_price) "
+			+ "VALUES((SELECT max(o_no) FROM order_info)+1, ${c_id}, ${p_frame}, ${p_groupset}, ${p_wheel}, ${p_comp}, ${o_price})")
+	public OrderVO findMoney(OrderVO ovo);
+	
 	
 }

@@ -25,7 +25,7 @@ public class LoginDAO {
 		return login_mapper.readMember(id);
 	}
 	
-	public void memberUpdate( String name, String pwd, String phone, String email, String addr) {
+	/*public void memberUpdate( String name, String pwd, String phone, String email, String addr) {
 		MemberVO vo = new MemberVO();
 		//vo.setC_id(id);
 		vo.setC_name(name);
@@ -36,5 +36,5 @@ public class LoginDAO {
 		
 		
 		login_mapper.memberUpdate(vo);
-	}
+	}*/
 }

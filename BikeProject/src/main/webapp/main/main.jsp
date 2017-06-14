@@ -140,8 +140,7 @@
             <!-- <li class="page-scroll"><a href="#homeLink">홈</a></li> -->
             <li class="page-scroll"><a href="#introduceLink">우리는..</a></li>
             <c:if test="${sessionScope.id==null }">
-            <li class="page-scroll" id="estimateNoID"><a href="#home">견적 내기
-               <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
+            <li class="page-scroll" id="estimateNoID"><a href="#home">견적 내기</a>
                <div class="dropdown">
                   <a href="#home">로그인 하세요.</a>
                </div>
@@ -149,22 +148,10 @@
             </c:if>
             <c:if test="${sessionScope.id!=null }">
 	            <c:if test="${sessionScope.type == 'customer' }">
-	               <li class="page-scroll" id="estimate"><a href="#home">견적 내기
-	               		<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-	                  <div class="dropdown">
-	                     <a href="#home" id="pay">온라인 견적</a>
-	                     <a href="#">견적 문의</a>
-	                  </div>
-	                 </li>
+	               <li class="page-scroll" id="estimate"><a href="#home">견적 내기</a></li>
 	               </c:if>
                <c:if test="${sessionScope.type eq 'seller' }">
-	               <li class="page-scroll" id="estimateAdmin"><a href="#home">견적서 관리
-	             			<span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span></a>
-	                 <div class="dropdown">
-	                    <a href="#home" id="addProduct">상품 등록</a>
-	                    <a href="#">견적 문의</a>
-	                 </div>
-	          		</li>
+	               <li class="page-scroll" id="estimateAdmin"><a href="#home">상품 관리</a></li>
 	           </c:if>
             </c:if>
             

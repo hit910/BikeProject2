@@ -53,7 +53,7 @@
 			});
 		});	
  	 	
- 		$('#result').click(function(){
+ 		$('.result').click(function(){
  			$.ajax({
  				type: "POST",
  				url: "totalPrice.do",
@@ -125,44 +125,29 @@
  			});
  	 	};
  	 	
- 	 	function purchase(){
- 	 		var IMP = window.IMP; // 생략가능
- 	 		IMP.init('imp35767572'); // 'iamport' 대신 부여받은 "가맹점 식별코드"를 사용
-
- 	 		IMP.request_pay({
- 	 		    pg : 'kakao', // version 1.1.0부터 지원.
- 	 		    pay_method : 'card',
- 	 		    merchant_uid : 'merchant_' + new Date().getTime(),
- 	 		    name : '주문명:결제테스트',
- 	 		    amount : 1001,
- 	 		    buyer_email : 'iamport@siot.do',
- 	 		    buyer_name : '구매자이름',
- 	 		    buyer_tel : '010-1234-5678',
- 	 		    buyer_addr : '서울특별시 강남구 삼성동',
- 	 		    buyer_postcode : '123-456',
- 	 		    m_redirect_url : 'https://www.yourdomain.com/payments/complete'
- 	 		}, function(rsp) {
- 	 		    if ( rsp.success ) {
- 	 		        var msg = '결제가 완료되었습니다.';
- 	 		        msg += '고유ID : ' + rsp.imp_uid;
- 	 		        msg += '상점 거래ID : ' + rsp.merchant_uid;
- 	 		        msg += '결제 금액 : ' + rsp.paid_amount;
- 	 		        msg += '카드 승인번호 : ' + rsp.apply_num;
- 	 		        location.href="testMain.jsp";
- 	 		    } else {
- 	 		        var msg = '결제에 실패하였습니다.';
- 	 		        msg += '에러내용 : ' + rsp.error_msg;
- 	 		        window.parent.location.reload();
- 	 		    }
- 	 		    alert(msg);
- 	 		});
+ 	 	function pSend(){
+ 	 		frm.submit();
  	 	};
  	 	
 </script>
 </head>
 <body>
    <center>
-   		<form id="frm">
+   		<form id="frm" action="purchase.do" method="post">
+   			
+   			<input type="hidden" name="fType" value="프레임">
+   			<input type="hidden" name="fName" id="fName">
+   			<input type="hidden" value="0" id="fprice" name="myfPrice">
+   			<input type="hidden" name="gType" value="구동계">
+   			<input type="hidden" name="gName" id="gName">
+   			<input type="hidden" value="0" id="gprice" name="mygPrice">
+   			<input type="hidden" name="wType" value="휠셋">
+   			<input type="hidden" name="wName" id="wName">
+   			<input type="hidden" value="0" id="wprice" name="mywPrice">
+   			<input type="hidden" name="cType" value="컴포넌트">
+   			<input type="hidden" name="cName" id="cName">
+   			<input type="hidden" value="0" id="cprice" name="mycPrice">
+   			
                <div id="estimate_select">
                   <div id="estimate_select_list">
                      <div id="purchaseHeader">
@@ -183,7 +168,7 @@
                            <div id="scrollList">
                               <table border="0" cellspacing="1" cellpadding="0" width="100%">
                                  <tr>
-                                    <td width="20%" align="center" id="myFrame">프레임</td>
+                                    <td width="20%" align="center" id="myFrame" >프레임</td>
                                     <td width="40%" align="center" id="myfName">선택안함</td>
                                     <td width="10%" align="center" >
                                     	<%-- <input id="myfCount" type="number" value="${count }" style="width:40px;"> --%>            	
@@ -203,7 +188,6 @@
                                     <td width="20%" align="center" >
                                     	
                                     	<%-- <input type="hidden" value="${count }" id="fcount" name="myfCount"> --%>
-                                    	<input type="hidden" value="0" id="fprice" name="myfPrice">
                                     	
                                     	<span id="fResult">0</span>
                                     </td>
@@ -223,7 +207,7 @@
 										</div>
                                     </td>
                                     <td width="20%" align="center">
-                                    	<input type="hidden" value="0" id="gprice" name="mygPrice">
+                                    	
                                     	<span id="gResult">0</span>
                                     </td>
                                     <td width="10%" align="center" id="mygCancel"></td>
@@ -242,7 +226,7 @@
 										</div>
                                     </td>
                                     <td width="20%" align="center">
-                                    	<input type="hidden" value="0" id="wprice" name="mywPrice">
+                                    	
                                     	<span id="wResult">0</span>
                                     </td>
                                     <td width="10%" align="center" id="mywCancel"></td>
@@ -261,7 +245,7 @@
 										</div>
                                     </td>
                                     <td width="20%" align="center">
-                                    	<input type="hidden" value="0" id="cprice" name="mycPrice">
+                                    	
                                     	<span id="cResult" >0</span>
                                     </td>
                                     <td width="10%" align="center" id="mycCancel"></td>
@@ -277,10 +261,12 @@
                                     	<font id="totalPrice" style="font-weight: bold; color: red;">0</font></td>
                                  </tr> -->
                               </table>
-									<span>총합</span>	<span id="result">0</span>
+                              		
+									<!-- <span>총합</span>	<span class="result" >0</span> -->
+									<input type="hidden" id="result" name="result" value="${total }">
                            </div>
                         </div>
-                        <input class="payBtn" type="button" value="결제하기" onclick="purchase();" style="margin: 10px;">
+                        <input class="payBtn" type="button" value="결제하기" onclick="pSend();" style="margin: 10px;">
                      </div>
                   </div>
                 </form>
