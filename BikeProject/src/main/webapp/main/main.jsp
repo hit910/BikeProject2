@@ -76,14 +76,23 @@
       });
       
       $('#qnaboard').click(function(){
-         Shadowbox.open({
-            content: 'qnaboard/qnaboard.do',
-            player: 'iframe',
-            title: 'Q&A',
-            width: 800,
-            height: 450
-         });
-      });
+          Shadowbox.open({
+             content: 'qnaboard/qnaboard.do',
+             player: 'iframe',
+             title: 'Q&A',
+             width: 1200,
+             height: 750
+          });
+       });
+       $('#club').click(function(){
+           Shadowbox.open({
+              content: 'club/club.jsp',
+              player: 'iframe',
+              title: '자전거 동호회',
+              width: 1300,
+              height: 800
+           });
+        });
       
       $('#estimate').click(function(){
           Shadowbox.open({
@@ -156,7 +165,7 @@
             </c:if>
             
             <li id="qnaboard"><a href="#home">묻고 답하기</a></li>
-            <li class="page-scroll"><a href="#clubLink">동호회</a></li>
+                        <li id="club"><a href="#home">동호회</a></li>
             <li class="page-scroll"><a href="#noviceLink">초보 공간</a></li>
             <c:if test="${sessionScope.id==null }">
                <li id="loginMenu"><a href="#home">로그인
@@ -202,7 +211,7 @@
          <jsp:include page="${estimate }"></jsp:include>
       </c:if> --%>
       <jsp:include page="${qnaboard }"></jsp:include>
-      <jsp:include page="${club }"></jsp:include>
+      <%-- <jsp:include page="${club }"></jsp:include> --%>
       <jsp:include page="${novice }"></jsp:include>
       <c:if test="${sessionScope.id!=null }">
          <jsp:include page="${update }"></jsp:include>

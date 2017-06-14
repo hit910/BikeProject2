@@ -57,39 +57,33 @@ function send(){
 <body>
 	<center>
 		<br/>
-		<!-- <h3>글쓰기</h3> -->
+		<h2>새글 작성</h2>
 		<form:form method="post" action="insert_ok.do" name="frm"
 					enctype="multipart/form-data"
 					modelAttribute="uploadForm">
-			<table width="700" id="table_content">
-				<tr height="27">
+			<table width="900" id="table_content">
+				<tr height="60">
 					<td width="20%" align="center">이름</td>
 					<td width="80%" align="left">
 						<input type="text" size="10" name="name">
 					</td>
-				</tr>
-				<tr height="27">
-					<td width="20%" align="center">이메일</td>
-					<td width="80%" align="left">
-						<input type="text" size="45" name="email">
-					</td>
 				</tr>	
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">제목</td>
 					<td width="80%" align="left">
-						<input type="text" size="45" name="subject">
+						<input type="text" size="58" name="subject">
 					</td>
 				</tr>	
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">내용</td>
 					<td width="80%" align="left">
-						<textarea rows="8" cols="50" name="content"></textarea>
+						<textarea rows="10" cols="60" name="content"></textarea>
 					</td>
 				</tr>
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">첨부파일</td>
 					<td width="80%" align="left">
-						<table id="table_content" width="560">
+						<table id="table_content2" width="620">
 							<tr>
 								<td colspan="2" align="right">
 									<input type="button" value="추가" id="addBtn"> 
@@ -97,12 +91,12 @@ function send(){
 								</td>
 							</tr>
 						</table>
-						<table id="table_content" width="560" class="fileView">
+						<table id="table_content2" width="620" class="fileView">
 							
 						</table>
 					</td>
 				</tr>
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">비밀번호</td>
 					<td width="80%" align="left">
 						<input type="password" size="10" name="pwd">
@@ -110,10 +104,11 @@ function send(){
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="button" value="글쓰기" onclick="send()">
-						<input type="button" value="취소" onclick="javascript:history.back()">
+						<input id="button_size" type="button" value="글쓰기" onclick="send()">
+						<input id="button_size" type="button" value="취소" onclick="javascript:history.back()">
 					</td>
-				</tr>																			
+				</tr>
+				<tr></tr>																			
 			</table>
 		</form:form>
 	</center>

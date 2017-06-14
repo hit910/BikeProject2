@@ -10,6 +10,7 @@
 	href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script type="text/javascript" src="../shadow/js/shadowbox.js"></script>
 <style>
 .ui-tabs-vertical {
 	width: 78em;
@@ -89,6 +90,7 @@ stylize any heading tags withing white-panel below
 </style>
 </head>
 <body>
+<center>
 <section id="clubLink">
 	<h1>자전거 동호회 활동</h1>
 
@@ -105,7 +107,7 @@ stylize any heading tags withing white-panel below
 
 			<hr>
 			<section id="pinBoot"> <article class="white-panel">
-			<img src="club/img/2.jpg" alt="">
+			<img src="../club/img/2.jpg" alt="">
 			<h4>
 				<a href="#">다같이 "북악산"</a>
 			</h4>
@@ -117,7 +119,7 @@ stylize any heading tags withing white-panel below
 				안되는데..."이러면서 보고 있는 나를 발견. 뭔가 괜히 라이딩 뽐뿌만 실컷 넣고 도움은 안된 것 같아서 죄송하고 안타까운
 				마음에 " 참 쉬운 북악산 라이딩 코스 안내" 시리즈 포스팅을 계획하게 되었다. (라고 해봤자 별거 없음) 네이버 지도
 				돌려다가 복사 붙여넣기 한 게시물을 보게 될 것임.</p>
-			</article> <article class="white-panel"> <img src="club/img/3.jpg"
+			</article> <article class="white-panel"> <img src="../club/img/3.jpg"
 				alt="">
 			<h4>
 				<a href="#">봄과 함께 달리는 천상의 산길‘안민MTB파크'</a>
@@ -126,7 +128,7 @@ stylize any heading tags withing white-panel below
 				임도와 웅산 능선, 천선동 매립장 일원에 위치한 MTB코스는 성주주민운동장~안민고개, 정상~웅산 능선~드림로드~안민고개
 				정상~ 안민MTB파크~익스트림로드~열두굽이길~복주머니길~성주주민운동장을 잇는 총 연장 25.1㎞ 구간으로 전국의 수많은
 				MTB마니아들이 즐겨 찾는 명소다.</p>
-			</article> <article class="white-panel"> <img src="club/img/4.jpg"
+			</article> <article class="white-panel"> <img src="../club/img/4.jpg"
 				alt="">
 			<h4>
 				<a href="#">아라뱃길 아라 자전거길 -아라뱃길 따라 한강에서 서해로</a>
@@ -138,7 +140,7 @@ stylize any heading tags withing white-panel below
 				붐빈다. 이 길은 아라뱃길을 따라 한강과 서해를 잇는다. 이제 서울에서도 지척의 거리에서 바다를 만날 수 있게 됐다.
 				아라자전거길은 서해에서 부산에 이르는 국토종주 자전거길의 출발점이자 종점이다. 국토종주 긴 여정의 설레임과 추억이 어린
 				곳이다.</p>
-			</article> <article class="white-panel"> <img src="club/img/1.jpg"
+			</article> <article class="white-panel"> <img src="../club/img/1.jpg"
 				alt="">
 			<h4>
 				<a href="#">도전정신이 강한 UCL 마운틴 바이크 월드컵2013(산악자전거 대회,MTB,익스트림 스포츠)
@@ -150,7 +152,7 @@ stylize any heading tags withing white-panel below
 				알프슈타트에서'UCL 마운틴 바이크 월드컵 2013(2013 UCL Mountain Bike World Cup
 				2013)'이 개최되었습니다. 마운틴 바이크 월드컵은 라이더 선수들이 그들이 할 수 있는 모든 것들을 다 보여주는 대회로
 				유명합니다.</p>
-			</article> <article class="white-panel"> <img src="club/img/5.jpg"
+			</article><!--  <article class="white-panel"> <img src="../club/img/5.jpg"
 				alt="">
 			<h4>
 				<a href="#">벚꽃비 맞았던 '옥천 라이딩'</a>
@@ -159,13 +161,13 @@ stylize any heading tags withing white-panel below
 				한강 양화지구 주차장을 출발, 출발지인 옥천군청에 도착한 시간은 오전 11시였다. 옥천 자전거길은 테마별로 금강 향수
 				100리길, 대청호 향수 200리길, 옥천읍 싱글트랙길, 향수 300리 장령산, 이백리, 환산길 등 총 8개의 테마길이
 				조성되어 있다.</p>
-			</article> <article class="white-panel"> <img src="club/img/7.jpg"
+			</article> --> <article class="white-panel"> <img src="../club/img/7.jpg"
 				alt="">
 			<h4>
 				<a href="#">"한밤의 자전거 라이딩"</a>
 			</h4>
 			<p>8명의 동호회 회원들이 번개로 반미에서 만나 60km를 달리는 번개를 하였다.</p>
-			</article> <article class="white-panel"> <img src="club/img/6.jpg"
+			</article> <article class="white-panel"> <img src="../club/img/6.jpg"
 				alt="">
 			<h4>
 				<a href="#">장흥군 MTB동호회, 제주서 자전거 타고 물축제 홍보</a>
@@ -177,7 +179,7 @@ stylize any heading tags withing white-panel below
 				희망의 줄배 타기, 맨손으로 물고기 잡기 등의 체험 행사와 생태·건강 프로그램 운영, 전문 공연단 공연, 연관 부대행사 등
 				다채로운 프로그램을 소개했다. 올해로 6회째를 맞는 정남진장흥 물축제는 오는 7월 26일부터 8월 1일까지 장흥읍 탐진강변
 				일원에서 '물과 숲 휴(休)'라는 주제로 열린다.</p>
-			</article> <article class="white-panel"> <img src="club/img/8.jpg"
+			</article> <article class="white-panel"> <img src="../club/img/8.jpg"
 				alt="">
 			<h4>
 				<a href="#">자이언트 코리아, RIDE KOREA, RIDE GIANT 국토종주 이벤트 진행.</a>
@@ -215,7 +217,7 @@ stylize any heading tags withing white-panel below
 		<div id="tabs-1">
 			<h2>4월 1차 번개모임후기</h2>
 			<p>
-				<img src="club/img/bun1.jpg">
+				<img src="../club/img/bun1.jpg">
 			</p>
 			<p>신기한 임승현 김현우 이정섭 한진혁 김동훈 황철균 김영록 이상원 고태훈 일상 번개모임</p>
 		</div>
@@ -223,7 +225,7 @@ stylize any heading tags withing white-panel below
 		<div id="tabs-2">
 			<h2>2017년 5월정기후기</h2>
 			<p>
-				<img src="club/img/jung1.jpg">
+				<img src="../club/img/jung1.jpg">
 			</p>
 			<p>품격있는 노땅스키어들의 레저 친목회 스키를사랑하는노땅들 스사노 에서 활동하는 자전거모임입니다 (10/3 현재
 				전체회원 수 609명) 자전거모임 활동회원 수는 현재 31명이며 계속 늘어나는 추세입니다 매주 화요일에는 주로
@@ -235,14 +237,14 @@ stylize any heading tags withing white-panel below
 		<div id="tabs-3">
 			<h2>4월 1차 번개후기</h2>
 			<p>
-				<img src="club/img/bun2.jpg">
+				<img src="../club/img/bun2.jpg">
 			</p>
 			<p>신기한 임승현 김현우 이정섭 한진혁 김동훈 황철균 김영록 이상원 고태훈 일상 번개모임</p>
 		</div>
 		<div id="tabs-4">
 			<h2>2017년 6월정기후기</h2>
 			<p>
-				<img src="club/img/bun3.jpg">
+				<img src="../club/img/bun3.jpg">
 			</p>
 			<p>신기한 임승현 김현우 이정섭 한진혁 김동훈 황철균 김영록 이상원 고태훈 일상 번개모임</p>
 
@@ -260,7 +262,7 @@ stylize any heading tags withing white-panel below
 		<div id="tabss-1">
 			<h2>2017년 사이클복 공구</h2>
 			<p>
-				<img src="club/img/ja.jpg">
+				<img src="../club/img/ja.jpg">
 			</p>
 			<p>2017 SEOUL CYCLING Club Riders. 이번에 로드복을 공구 할 예정이오니 많은 관심과 참여
 				부탁드립니다.</p>
@@ -268,8 +270,8 @@ stylize any heading tags withing white-panel below
 		<div id="tabss-2">
 			<h2>2017년용품공구</h2>
 			<p>
-				<img src="club/img/gongu1.jpg"> 
-			<img src="club/img/gongu2.jpg"> 
+				<img src="../club/img/gongu1.jpg"> 
+			<img src="../club/img/gongu2.png"> 
 			</p>
 			
 			<p>일반적으로 사용하는 케이블 타이(Cable Tie) 의 경우 1회용 소모품으로 사용 후 쉽게 절단해서 버리는데
@@ -284,10 +286,10 @@ stylize any heading tags withing white-panel below
 
 <!-- 	<hr>
 	<h2>진행중인 이벤트</h2>
-	<a href="http://bike-korea.com/page_xRmq23"><img src="club/img/ing.JPG"></a>
+	<a href="http://bike-korea.com/page_xRmq23"><img src="../club/img/ing.JPG"></a>
 	<hr>
 	<h2>지난 이벤트</h2>
-	<a href="http://bike-korea.com/page_xRmq23"><img src="club/img/before.JPG"></a>
+	<a href="http://bike-korea.com/page_xRmq23"><img src="../club/img/before.JPG"></a>
 	<a href="http://bike-korea.com/page_xRmq23">진행중인 이벤트 자세히 보기</a> -->
 </section>
 <script>
@@ -449,4 +451,5 @@ stylize any heading tags withing white-panel below
 	})(jQuery, window, document);
 </script>
 </body>
+</center>
 </html>

@@ -9,9 +9,8 @@
 </head>
 <body>
 	<center>
-		<h3>삭제하기</h3>
 		<form action="delete_ok.do" method="post">
-			<table id="table_content" width="350">
+			<table id="table_content3" width="350">
 				<tr>
 					<td align="left">
 					비밀번호 : <input type="password" size="12" name="pwd">

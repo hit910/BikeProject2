@@ -56,25 +56,25 @@ function send(){
 </head>
 <body>
 	<center>
-		<h3>수정하기</h3>
+		<h2>수정하기</h2>
 		<form:form method="post" action="update_ok.do" name="frm"
 					enctype="multipart/form-data"
 					modelAttribute="uploadForm">
-			<table width="700" id="table_content">
-				<tr height="27">
+			<table width="900" id="table_content">
+				<tr height="60">
 					<td width="20%" align="center">이름</td>
 					<td width="80%" align="left">
 						<input type="text" size="10" name="name" value="${vo.name }">
 						<input type="hidden" name="no" value="${vo.no }">
 					</td>
 				</tr>	
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">제목</td>
 					<td width="80%" align="left">
 						<input type="text" size="45" name="subject" value="${vo.subject }">
 					</td>
 				</tr>	
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">내용</td>
 					<td width="80%" align="left">
 						<textarea rows="8" cols="50" name="content">
@@ -82,10 +82,10 @@ function send(){
 						</textarea>
 					</td>
 				</tr>
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">첨부파일</td>
 					<td width="80%" align="left">
-						<table id="table_content" width="560">
+						<table id="table_content2" width="620">
 							<tr>
 								<td colspan="2" align="right">
 									<input type="button" value="추가" id="addBtn"> 
@@ -93,12 +93,12 @@ function send(){
 								</td>
 							</tr>
 						</table>
-						<table id="table_content" width="560" class="fileView">
+						<table id="table_content2" width="620" class="fileView">
 							
 						</table>
 					</td>
 				</tr>
-				<tr height="27">
+				<tr height="60">
 					<td width="20%" align="center">비밀번호</td>
 					<td width="80%" align="left">
 						<input type="password" size="10" name="pwd">
@@ -106,10 +106,11 @@ function send(){
 				</tr>
 				<tr>
 					<td colspan="2" align="center">
-						<input type="button" value="수정" onclick="send()">
-						<input type="button" value="취소" onclick="javascript:history.back()">
+						<input id="button_size" type="button" value="수정" onclick="send()">
+						<input id="button_size" type="button" value="취소" onclick="javascript:history.back()">
 					</td>
-				</tr>																			
+				</tr>
+																							
 			</table>
 		</form:form>
 	</center>
