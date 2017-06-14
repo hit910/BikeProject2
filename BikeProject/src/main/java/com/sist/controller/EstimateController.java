@@ -5,6 +5,7 @@ import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.support.DaoSupport;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -172,39 +173,26 @@ public class EstimateController {
 		fdao.insertProduct(combo, name, price, year);
 		return "estimate/addProduct_ok";
 	}
-/*	
+	
+	// Product Update
+	@RequestMapping("productUpdate.do")
+	public void ProductUpdate(HttpServletRequest request) {
+		String tname = request.getParameter("tname");
+		int no = Integer.parseInt(request.getParameter("no"));
+		String name = request.getParameter("name");
+		String price = request.getParameter("price");
+		String year = request.getParameter("year");
+		
+		fdao.productUpdate(tname, no, name, price, year);
+	}
+	
+	
+	// Product Delete
 	@RequestMapping("productDelete.do")
-	public void productDelete(String tname, String no) {
-		System.out.println(tname);
-		System.out.println(no);
+	public void poductDelete(HttpServletRequest request) {
+		String tname = request.getParameter("tname");
+		int no = Integer.parseInt(request.getParameter("no"));
 		fdao.productDelete(tname, no);
-	}*/
-	
-	@RequestMapping("frameDelete.do")
-	public String frameDelete(HttpServletRequest request) {
-		int num = Integer.parseInt(request.getParameter("no"));
-		fdao.frameDelete(num);
-		return "estimate/deleteProduct_ok";
 	}
 	
-	@RequestMapping("groupsetDelete.do")
-	public String groupsetDelete(HttpServletRequest request) {
-		int num = Integer.parseInt(request.getParameter("no"));
-		fdao.groupsetDelete(num);
-		return "estimate/deleteProduct_ok";
-	}
-
-	@RequestMapping("wheelsetDelete.do")
-	public String wheelsetDelete(HttpServletRequest request) {
-		int num = Integer.parseInt(request.getParameter("no"));
-		fdao.wheelsetDelete(num);
-		return "estimate/addProduct_ok";
-	}
-
-	@RequestMapping("compDelete.do")
-	public String compDelete(HttpServletRequest request) {
-		int num = Integer.parseInt(request.getParameter("no"));
-		fdao.compDelete(num);
-		return "estimate/deleteProduct_ok";
-	}
 }

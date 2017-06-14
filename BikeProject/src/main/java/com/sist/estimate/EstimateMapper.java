@@ -5,6 +5,7 @@ import java.util.*;
 import org.apache.ibatis.annotations.Delete;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 public interface EstimateMapper {
 
@@ -20,6 +21,7 @@ public interface EstimateMapper {
 	@Select("SELECT p_no,p_name,p_price,p_regdate FROM product_comp ORDER BY p_no DESC")
 	public List<FrameVO> compListData();
 
+	
 	@Insert("INSERT INTO product_frame "
 			+ "VALUES ((SELECT max(p_no) FROM product_frame)+1, #{p_name}, #{p_price}, #{p_regdate})")
 	public void insertFrame(FrameVO vo);
@@ -36,6 +38,20 @@ public interface EstimateMapper {
 			+ "VALUES ((SELECT max(p_no) FROM product_comp)+1, #{p_name}, #{p_price}, #{p_regdate})")
 	public void insertComp(FrameVO vo);
 	
+	
+	@Update("UPDATE product_frame SET p_name=#{p_name},p_price=#{p_price},p_regdate=#{p_regdate} WHERE p_no = #{p_no}")
+	public void frameUpdate(FrameVO vo);
+	
+	@Update("UPDATE product_groupset SET p_name=#{p_name},p_price=#{p_price},p_regdate=#{p_regdate} WHERE p_no = #{p_no}")
+	public void groupsetUpdate(FrameVO vo);
+	
+	@Update("UPDATE product_wheelset SET p_name=#{p_name},p_price=#{p_price},p_regdate=#{p_regdate} WHERE p_no = #{p_no}")
+	public void wheelsetUpdate(FrameVO vo);
+	
+	@Update("UPDATE product_comp SET p_name=#{p_name},p_price=#{p_price},p_regdate=#{p_regdate} WHERE p_no = #{p_no}")
+	public void compUpdate(FrameVO vo);
+	
+	
 	@Delete("DELETE FROM product_frame WHERE p_no = #{no}")
 	public void frameDelete(int no);
 	
@@ -47,4 +63,6 @@ public interface EstimateMapper {
 	
 	@Delete("DELETE FROM product_comp WHERE p_no = #{no}")
 	public void compDelete(int no);
+	
+	
 }

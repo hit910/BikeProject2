@@ -10,12 +10,12 @@
 <script type="text/javascript" src="disign/shadow/js/shadowbox.js"></script>
 <link rel="stylesheet" type="text/css" href="member/login.css">
 <script type="text/javascript">
-	function loginsend(){
+	function loginsend(test){
 		send.submit();
 	};    
-	function entersend() {
+	/* function entersend() {
 		if(window.child.event.keyCode==13) loginsend();
-	};
+	}; */
 </script>
 </head>
 <body>
