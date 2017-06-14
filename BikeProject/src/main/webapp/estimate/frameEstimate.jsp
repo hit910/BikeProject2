@@ -16,41 +16,23 @@ $(function(){
 		var name = $('#fn'+no).text();
 		var count = parseInt(1);
 		var price = parseInt($('#fp'+no).text());
+		
 		//$('#myType').text(type);
 		$('#myfName').text(name);
-		$('#myfCount').text(count);
+		$('#myfCount').attr('selected',1);
+		$('#fResult').text(price);
 		$('#fcount').val(count);
 		$('#fprice').val(price);
-		$('#myfPrice').text(price);
 		$('#myfCancel').text('X');
 	});
 	
 	$('#myfCancel').click(function(){
 		//$('#myType').text("");
 		$('#myfName').text("선택안함");
-		$('#myfCount').text(0);
-		$('#myfPrice').text(0);
+		$('#myfCount').attr('selected',0);
+		$('#fResult').text(0);
 		$('#myfCancel').text("");
 	});
-	
- 	$('#sum').click(function frameSum(){
-		$('#myfPrice').text(count*price);
-	});
-	
-	$('#inc').click(function(){
-		$.ajax({
-			type: "POST",
-			url: "totalPrice.do",
-			data:$('#frm').serialize(),
-			success:function(data){
-				$('#estimate_select').html(data);
-			},
-			error:function(data){
-				$.jQueryAlert("실패");
-			}
-		});
- 			
- 	});
  	
 });
 </script>

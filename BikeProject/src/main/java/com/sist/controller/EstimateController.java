@@ -78,17 +78,59 @@ public class EstimateController {
 		return "estimate/compEstimate";
 	}
 	
-	@RequestMapping("estimate/totalPrice.do")
-	public String totalPrice(Model model, String myfPrice, String myfCount){
-		System.out.println(myfPrice+", "+myfCount);
-		int count = Integer.parseInt(myfCount)+1;
-		System.out.println(count);
-		int total = Integer.parseInt(myfPrice)*count;
-		System.out.println(total);
-		model.addAttribute("total", total);
-		model.addAttribute("count", count);
+	@RequestMapping("estimate/totalFramePrice.do")
+	public String totalFramePrice(Model model, String myfPrice, String myfCount){
+
+		int fTotal = Integer.parseInt(myfPrice)*Integer.parseInt(myfCount);
+
+		model.addAttribute("fTotal", fTotal);
 		
-		return "estimate/myEstimate";
+		return "estimate/frameTot";
+	}
+	
+	@RequestMapping("estimate/totalGroupPrice.do")
+	public String totalGroupPrice(Model model, String mygPrice, String mygCount){
+
+		int gTotal = Integer.parseInt(mygPrice)*Integer.parseInt(mygCount);
+
+		model.addAttribute("gTotal", gTotal);
+		
+		return "estimate/groupTot";
+	}
+	
+	@RequestMapping("estimate/totalWheelPrice.do")
+	public String totalWheelPrice(Model model, String mywPrice, String mywCount){
+
+		int wTotal = Integer.parseInt(mywPrice)*Integer.parseInt(mywCount);
+
+		model.addAttribute("wTotal", wTotal);
+		
+		return "estimate/wheelTot";
+	}
+	
+	@RequestMapping("estimate/totalCompPrice.do")
+	public String totalCompPrice(Model model, String mycPrice, String mycCount){
+
+		int cTotal = Integer.parseInt(mycPrice)*Integer.parseInt(mycCount);
+
+		model.addAttribute("cTotal", cTotal);
+		
+		return "estimate/compTot";
+	}
+	
+	@RequestMapping("estimate/totalPrice.do")
+	public String totalPrice(Model model, String myfPrice, String myfCount, String mygPrice, String mygCount,
+							String mywPrice, String mywCount, String mycPrice, String mycCount
+	){
+		int fTotal = Integer.parseInt(myfPrice)*Integer.parseInt(myfCount);
+		int gTotal = Integer.parseInt(mygPrice)*Integer.parseInt(mygCount);
+		int wTotal = Integer.parseInt(mywPrice)*Integer.parseInt(mywCount);
+		int cTotal = Integer.parseInt(mycPrice)*Integer.parseInt(mycCount);
+		int total = fTotal+gTotal+wTotal+cTotal;
+		
+		model.addAttribute("total", total);
+		
+		return "estimate/estiTotal";
 	}
 	
 	@RequestMapping("purchase.do")

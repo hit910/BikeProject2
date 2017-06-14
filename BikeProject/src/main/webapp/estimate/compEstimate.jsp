@@ -14,21 +14,23 @@ $(function(){
 		var no = $(this).attr('value');
 		//var type = $('#type').text();
 		var name = $('#cn'+no).text();
-		//var count = $('#cc'+no).attr('value');
-		var price = $('#cp'+no).text();
+		var count = parseInt(1);
+		var price = parseInt($('#cp'+no).text());
 		
 		//$('#myType').text(type);
 		$('#mycName').text(name);
-		$('#mycCount').text(1);
-		$('#mycPrice').text(price);
+		$('#mycCount').attr('selected',1);
+		$('#cResult').text(price);
+		$('#ccount').val(count);
+		$('#cprice').val(price);
 		$('#mycCancel').text('X');
 	});
 	
 	$('#mycCancel').click(function(){
 		//$('#myType').text("");
 		$('#mycName').text("선택안함");
-		$('#mycCount').text("0");
-		$('#mycPrice').text("0");
+		$('#mycCount').attr('selected',0);
+		$('#cResult').text(0);
 		$('#mycCancel').text("");
 	});
 });
