@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -104,13 +105,15 @@
 						</table>
 						<div id="scrollList">
 							<table border="0" cellspacing="1" cellpadding="0" width="100%">
+							<c:forEach var="ordervo" items="${list }">
 								<tr>
-									<td width="15%" align="center">2014939</td>
-									<td width="15%" align="center">2017.06.01</td>
-									<td width="30%" align="center">비앙키 올트레 xl4...</td>
-									<td width="20%" align="center">5000000</td>
-									<td width="20%" align="center">상품준비중</td>
+									<td width="15%" align="center">${vo.o_no }</td>
+									<td width="15%" align="center">${vo.o_date }</td>
+									<td width="30%" align="center">${vo.p_frame }...</td>
+									<td width="20%" align="center">${vo.o_price }</td>
+									<td width="20%" align="center">배송 준비중</td>
 								</tr>
+							</c:forEach>
 							</table>
 						</div>
 					</div>

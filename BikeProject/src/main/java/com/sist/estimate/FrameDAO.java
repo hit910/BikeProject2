@@ -1,5 +1,6 @@
 package com.sist.estimate;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -122,18 +123,28 @@ public class FrameDAO {
 		}
 	}
 	
-	public void findMoney(String pfname, String pgname, String pwname, String pcname,
+	public int findMoney(String pfname, String pgname, String pwname, String pcname,
 			String pfType, String pgType, String pwType, String pcType, String pmoney, String id){
-		System.out.println(id);
 		
 		OrderVO ovo = new OrderVO();
+		ovo.setO_no(Integer.parseInt(estimateMapper.orderNo()));
 		ovo.setC_id(id);
 		ovo.setP_frame(pfname);
 		ovo.setP_groupset(pgname);
 		ovo.setP_wheel(pwname);
 		ovo.setP_comp(pcname);
 		ovo.setO_price(Integer.parseInt(pmoney));
-		System.out.println(ovo.getC_id());
+		
 		estimateMapper.findMoney(ovo);
+		
+		return ovo.getO_no();
+	}
+	
+	public List<OrderVO> orderList(String id) {
+		List<OrderVO> list = new ArrayList<>();
+		
+		list = estimateMapper.orderList(id);
+		
+		return list;
 	}
 }

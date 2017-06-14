@@ -1,5 +1,6 @@
 package com.sist.controller;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -9,9 +10,12 @@ import org.springframework.dao.support.DaoSupport;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
+import org.springframework.web.context.request.SessionScope;
 
 import com.sist.estimate.FrameDAO;
 import com.sist.estimate.FrameVO;
+import com.sist.estimate.OrderVO;
 
 @Controller
 public class EstimateController {
@@ -190,8 +194,10 @@ public class EstimateController {
 	}
 	
 	@RequestMapping("myOrder.do")
-	public String myOrder(String url){
-		
+	public String myOrder(String id, Model model){
+		List<OrderVO> list = new ArrayList<>();
+		list = fdao.orderList(id);
+		model.addAttribute("list", list);
 		return "estimate/myOrder";
 	}
 	
@@ -247,9 +253,10 @@ public class EstimateController {
 	@RequestMapping("estimate/testMain.do")
 	public String testMain(Model model, String pfname, String pgname, String pwname, String pcname,
 							String pfType, String pgType, String pwType, String pcType, String pmoney, String pid){
-		System.out.println(pid);
-		fdao.findMoney(pfname, pgname, pwname, pcname, pfType, pgType, pwType, pcType, pmoney, pid);
-
+		int no = fdao.findMoney(pfname, pgname, pwname, pcname, pfType, pgType, pwType, pcType, pmoney, pid);
+		
+		model.addAttribute("no",no);
+		model.addAttribute("pmoney",pmoney);
 		return "estimate/testMain";
 	}
 	

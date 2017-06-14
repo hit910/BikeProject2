@@ -67,7 +67,13 @@
 							<font style="font-weight: bold;">총 결제 금액</font>
 						</div>
 						<div id="resultTotalRight">
-							<font style="color: red; font-weight: bold;">${money }</font>
+							<font style="color: red; font-weight: bold;">${pmoney }</font>
+						</div>
+						<div id="resultTotalLeft">
+							<font style="font-weight: bold;">주문번호</font>
+						</div>
+						<div id="resultTotalRight">
+							<font style="color: red; font-weight: bold;">${no }</font>
 						</div>
 					</div>
 					<div id="resultContent">

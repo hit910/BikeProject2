@@ -126,6 +126,10 @@
    function logoutsend(){
       logout.submit();
    }
+   
+   function myordersend() {
+	   myorderform.submit();
+   }
 
 </script>
 </head>
@@ -182,7 +186,10 @@
                <span class="glyphicon glyphicon-chevron-down" aria-hidden="true"></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
                   <div class="dropdown">
                      <a href="#home" id="myOrder">주문 정보 확인</a>
-                     <a href="#update">회원 정보 수정</a>
+                     <form action="myOrder.do" method="post" id="myorderform">
+                     <input type="hidden" name="orderid" value="${sessionScope.id }">
+                     <a href="#myOrder">회원 정보 수정</a>
+                     </form>
                      <form name="logout" action="member/logout.do" method="post">
                         <a href="#" onclick="javascript:logoutsend();">로그아웃</a>
                      </form>
