@@ -107,10 +107,10 @@
 							<table border="0" cellspacing="1" cellpadding="0" width="100%">
 							<c:forEach var="ordervo" items="${list }">
 								<tr>
-									<td width="15%" align="center">${vo.o_no }</td>
-									<td width="15%" align="center">${vo.o_date }</td>
-									<td width="30%" align="center">${vo.p_frame }...</td>
-									<td width="20%" align="center">${vo.o_price }</td>
+									<td width="15%" align="center">${ordervo.o_no }</td>
+									<td width="15%" align="center">${ordervo.o_date }</td>
+									<td width="30%" align="center">${ordervo.p_frame }...</td>
+									<td width="20%" align="center">${ordervo.o_price }</td>
 									<td width="20%" align="center">배송 준비중</td>
 								</tr>
 							</c:forEach>
@@ -118,12 +118,12 @@
 						</div>
 					</div>
 					<div id="itemTotal">
-						<div id="itemTotalLeft">
+						<!-- <div id="itemTotalLeft">
 							<font style="font-weight: bold;">총 금액</font>
 						</div>
 						<div id="itemTotalRight">
 							<font style="color: red; font-weight: bold;">6000000 원</font>
-						</div>
+						</div> -->
 					</div>
 				</div>
 			</div>

@@ -4,7 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
+import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.support.DaoSupport;
 import org.springframework.stereotype.Controller;
@@ -194,7 +196,9 @@ public class EstimateController {
 	}
 	
 	@RequestMapping("myOrder.do")
-	public String myOrder(String id, Model model){
+	public String myOrder(String orderid, Model model, HttpSession session){
+		String id=(String) session.getAttribute("id");
+		System.out.println(id);
 		List<OrderVO> list = new ArrayList<>();
 		list = fdao.orderList(id);
 		model.addAttribute("list", list);

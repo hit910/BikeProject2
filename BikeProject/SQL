@@ -1,0 +1,256 @@
+
+-- QnA Board DB Start
+DROP  TABLE qna_board CASCADE CONSTRAINTS ;
+CREATE TABLE qna_board (
+  b_no NUMBER PRIMARY KEY ,
+  b_name VARCHAR2(30) NOT NULL ,
+  b_title VARCHAR2(300) NOT NULL ,
+  b_content CLOB NOT NULL ,
+  b_pwd VARCHAR2(12) NOT NULL ,
+  b_regdate DATE DEFAULT SYSDATE
+);
+
+DROP SEQUENCE qna_sequence;
+CREATE SEQUENCE qna_sequence
+  START WITH 0
+  INCREMENT BY 1
+  NOCYCLE
+  NOCACHE
+  MINVALUE 0;
+
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'1','1','1','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'2','2','2','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'3','3','3','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'4','4','4','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'5','5','5','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'6','6','6','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'7','7','7','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'8','8','8','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'9','9','9','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'10','10','10','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'11','11','11','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'12','12','12','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'13','13','13','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'14','14','14','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'15','15','15','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'16','16','16','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'17','17','17','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'18','18','18','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'19','19','19','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'20','20','20','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'21','21','21','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+INSERT INTO qna_board VALUES (qna_sequence.nextval,'22','22','22','1234',TO_CHAR(SYSDATE,'yyyy-MM-dd'));
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM qna_board WHERE b_no BETWEEN 1 AND 10 ORDER BY b_no DESC ;
+
+-- QnA Board DB End
+
+-- Reply Board DB Start
+DROP TABLE reply_board CASCADE CONSTRAINTS ;
+CREATE TABLE reply_board (
+  r_no NUMBER PRIMARY KEY ,
+  r_content VARCHAR2(2000) NOT NULL ,
+  r_date DATE DEFAULT SYSDATE,
+  r_pwd VARCHAR2(12),
+  b_no NUMBER REFERENCES qna_board(b_no)
+);
+
+DROP SEQUENCE REPLY_SEQUENCE;
+CREATE SEQUENCE reply_sequence
+  START WITH 0
+  INCREMENT BY 1
+  NOCYCLE
+  NOCACHE
+  MINVALUE 0;
+
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'111',SYSDATE,'1234',1);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'222',SYSDATE,'1234',2);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'333',SYSDATE,'1234',3);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'444',SYSDATE,'1234',4);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'555',SYSDATE,'1234',5);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'666',SYSDATE,'1234',6);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'777',SYSDATE,'1234',7);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'888',SYSDATE,'1234',8);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'999',SYSDATE,'1234',9);
+INSERT INTO reply_board VALUES (reply_sequence.nextval,'101010',SYSDATE,'1234',10);
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM reply_board;
+
+-- Reply Board DB End
+
+-- User DB Start
+DROP TABLE customer CASCADE CONSTRAINTS ;
+CREATE TABLE customer (
+  c_id VARCHAR2(20) PRIMARY KEY ,
+  c_pwd VARCHAR2(16) NOT NULL ,
+  c_name VARCHAR2(30) UNIQUE ,
+  c_addr VARCHAR(200) NOT NULL ,
+  c_phon VARCHAR2(13) UNIQUE ,
+  c_email VARCHAR2(100) UNIQUE ,
+  check_type VARCHAR2(10) NOT NULL
+);
+SELECT COUNT(*) FROM customer WHERE id='test01';
+SELECT * FROM customer WHERE c_id='test01';
+INSERT INTO customer VALUES ('test01','1234','test1','aaaaa','123-1234-1234','test@naver.com','customer');
+INSERT INTO customer VALUES ('test02','1234','test2','aaaaa','123-1234-1235','tesr@naver.com','customer');
+INSERT INTO customer VALUES ('test03','1234','test3','aaaaa','123-1234-1236','tese@naver.com','customer');
+INSERT INTO customer VALUES ('seller01','1234','seller1','bbbbb','098-0977-0970','seller01@naver.com','seller');
+INSERT INTO customer VALUES ('seller02','1234','seller2','bbbbb','098-0977-0977','seller02@naver.com','seller');
+INSERT INTO customer VALUES ('seller03','1234','seller3','bbbbb','098-0977-0978','seller03@naver.com','seller');
+INSERT INTO customer VALUES ('seller04','1234','seller4','bbbbb','098-0977-0979','seller04@naver.com','seller');
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM customer;
+
+INSERT INTO customer VALUES('hong','1234','hong','testsi','523-1234-1234','test00@naver.com','customer');
+
+-- User DB End
+
+-- Seller DB Start
+DROP TABLE seller CASCADE CONSTRAINTS ;
+CREATE TABLE seller (
+  s_id VARCHAR2(20) PRIMARY KEY ,
+  s_pwd VARCHAR2(16) NOT NULL ,
+  s_name VARCHAR2(30) UNIQUE ,
+  s_email VARCHAR2(100) UNIQUE ,
+  check_type VARCHAR2(10) NOT NULL
+);
+
+INSERT INTO seller VALUES ('seller01','1234','seller1','seller01@naver.com','seller');
+INSERT INTO seller VALUES ('seller02','1234','seller2','seller02@naver.com','seller');
+INSERT INTO seller VALUES ('seller03','1234','seller3','seller03@naver.com','seller');
+INSERT INTO seller VALUES ('seller04','1234','seller4','seller04@naver.com','seller');
+COMMIT ;
+ROLLBACK ;
+
+SELECT COUNT(*) FROM seller WHERE s_id='seller01';
+SELECT * FROM seller;
+-- Seller DB End
+
+-- Product_frame DB Start
+DROP TABLE product_frame CASCADE CONSTRAINTS ;
+CREATE TABLE product_frame (
+  p_no NUMBER PRIMARY KEY ,
+  p_name VARCHAR2(50) UNIQUE ,
+  p_price VARCHAR2(30) NOT NULL ,
+  p_regdate VARCHAR2(5) NOT NULL
+);
+
+SELECT p_no,p_name,p_price,p_regdate FROM product_frame;
+
+INSERT INTO product_frame VALUES (1,'Cervelo S5','5,244,000','2017');
+INSERT INTO product_frame VALUES (2,'Pinarello dogma F10','5,980,000','2017');
+INSERT INTO product_frame VALUES (3,'Bianchi oltre X4','5,000,000','2017');
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM product_frame;
+
+-- Product_frame DB End
+
+-- Product_groupset DB Start
+DROP TABLE product_groupset CASCADE CONSTRAINTS ;
+CREATE TABLE product_groupset (
+  p_no NUMBER PRIMARY KEY ,
+  p_name VARCHAR2(50) UNIQUE ,
+  p_price VARCHAR2(30) NOT NULL ,
+  p_regdate VARCHAR2(5) NOT NULL
+);
+
+INSERT INTO product_groupset VALUES (1,'Sram red 22','4,870,000','2016');
+INSERT INTO product_groupset VALUES (2,'Shimano dura-ace','2,350,000','2017');
+INSERT INTO product_groupset VALUES (3,'Campagnolo superrecord','5,414,000','2016');
+
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM product_groupset;
+-- Product_groupset DB End
+
+-- Product_wheelset DB Start
+DROP TABLE product_wheelset CASCADE CONSTRAINTS ;
+CREATE TABLE product_wheelset (
+  p_no NUMBER PRIMARY KEY ,
+  p_name VARCHAR2(50) UNIQUE ,
+  p_price VARCHAR2(30) NOT NULL ,
+  p_regdate VARCHAR2(5) NOT NULL
+);
+
+INSERT INTO product_wheelset VALUES (1,'Mavic CCU','4,500,000','2017');
+INSERT INTO product_wheelset VALUES (2,'Campagnolo Bora Ultra','5,381,700','2017');
+INSERT INTO product_wheelset VALUES (3,'Zipp 404','2,300,000','2017');
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM product_wheelset;
+-- Product_wheelset DB End
+
+-- Product_comp DB Start
+DROP TABLE product_comp CASCADE CONSTRAINTS ;
+CREATE TABLE product_comp (
+  p_no NUMBER PRIMARY KEY ,
+  p_name VARCHAR2(50) UNIQUE ,
+  p_price VARCHAR2(30) NOT NULL ,
+  p_regdate VARCHAR2(5) NOT NULL
+);
+
+INSERT INTO product_comp VALUES (1,'Zipp comp','600,000','2017');
+INSERT INTO product_comp VALUES (2,'Fizik comp','600,000','2016');
+INSERT INTO product_comp VALUES (3,'3T comp','500,000','2017');
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM product_comp;
+-- Product_comp DB End
+
+-- Product_bike DB Start
+DROP TABLE product_bike CASCADE CONSTRAINTS ;
+CREATE TABLE product_bike (
+  p_no NUMBER PRIMARY KEY ,
+  p_name VARCHAR2(50) UNIQUE ,
+  p_price VARCHAR2(30) NOT NULL ,
+  p_regdate VARCHAR2(5) NOT NULL
+);
+
+INSERT INTO product_bike VALUES (1,'Giant SCR2+','540,000','2016');
+INSERT INTO product_bike VALUES (2,'Merida Scultra 100','550,000','2016');
+INSERT INTO product_bike VALUES (3,'Trigon Painkiller','590,000','2016');
+INSERT INTO product_bike VALUES (4,'Trek Emonda S5','1,800,000','2016');
+COMMIT ;
+ROLLBACK ;
+
+SELECT * FROM product_bike;
+-- Product_bike DB End
+
+DROP TABLE order_info CASCADE CONSTRAINTS ;
+CREATE TABLE order_info (
+  o_no NUMBER PRIMARY KEY ,
+  c_id VARCHAR2(25) NOT NULL REFERENCES customer(c_id),
+  p_frame VARCHAR2(25) REFERENCES product_frame(p_name),
+  p_groupset VARCHAR2(25) REFERENCES product_groupset(p_name),
+  p_wheel VARCHAR2(25) REFERENCES product_wheelset(p_name),
+  p_comp VARCHAR2(25) REFERENCES product_comp(p_name),
+  o_price NUMBER NOT NULL ,
+  o_date DATE DEFAULT SYSDATE
+);
+
+SELECT * FROM order_info WHERE c_id='test01';
+
+DROP SEQUENCE order_sequence ;
+CREATE SEQUENCE order_sequence
+  START WITH 0
+  INCREMENT BY 1
+  NOCYCLE
+  NOCACHE
+  MINVALUE 0;
+
+INSERT INTO order_info VALUES (1,'test01','Cervelo S5','Sram red 22','Mavic CCU','Zipp comp','1700',SYSDATE);
+COMMIT ;
+ROLLBACK ;
+SELECT * FROM order_info;
+

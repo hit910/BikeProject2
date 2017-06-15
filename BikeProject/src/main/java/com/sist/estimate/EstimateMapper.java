@@ -71,7 +71,7 @@ public interface EstimateMapper {
 			+ "VALUES(#{o_no}, #{c_id}, #{p_frame}, #{p_groupset}, #{p_wheel}, #{p_comp}, #{o_price})")
 	public void findMoney(OrderVO ovo);
 	
-	@Select("SELECT * FROM order_info WHERE c_id=#{id}")
+	@Select("SELECT * FROM order_info WHERE c_id=#{id} ORDER BY o_no DESC")
 	public List<OrderVO> orderList(String id);
 
 }
